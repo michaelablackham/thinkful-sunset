@@ -14,8 +14,8 @@
 $(function() {
   'use strict';
 
-  $(function () {
-    // App.State.get();
-    App.Form.renderForm();
-  });
+  App.State.addObserver(App.Results);
+
+  App.State.get();
+  App.Form.submit();
 });

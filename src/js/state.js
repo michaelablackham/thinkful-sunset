@@ -4,11 +4,14 @@ App.State = (function ($) {
   var state = {
     location: '', //city state given for search
     sunType: '', // sunset or sunrise
-    temperature: '', //convert from C to F
-    recommendedTime: '', //recommended time for sunset/sunrise
-    officialTime: '', //official time of sunset/sunrise
-    qualityPercent: '', //% 0-100 of quality of sunrise/sunset
-    qualityString: '' //% quality of sunrise/sunset in word
+    forecast: null
+    // forecast: {
+    //   temperature: '', //convert from C to F
+    //   recommendedTime: '', //recommended time for sunset/sunrise
+    //   officialTime: '', //official time of sunset/sunrise
+    //   qualityPercent: '', //% 0-100 of quality of sunrise/sunset
+    //   qualityString: '' //% quality of sunrise/sunset in word
+    // }
   };
 
   var observers = []

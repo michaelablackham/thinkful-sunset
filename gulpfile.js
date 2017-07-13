@@ -17,7 +17,7 @@ gulp.task('build:css', function () {
 
 gulp.task('build:js', function () {
   gulp.src('./src/js/*.js')
-    .pipe(concat('build.js'))
+    .pipe(concat('app.js'))
     .pipe(gulp.dest('./build'))
 })
 

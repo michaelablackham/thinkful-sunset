@@ -3,32 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>SunsetWX</title>
-    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main>
       <header>
-        <h1>SkyFire
+        <h1>SUNSETWX<h1>
       </header>
       <section id="page-form">
+        <div class="template-form">
         <form name="location">
+          <label for="location">Location</label>
+          <input id="location" type="text" name="location" placeholder="City, State" class="sunset-location" required></input>
           <fieldset>
-            <legend>Location and type of sun event</legend>
-            <label for="location">City, State</label>
-            <input type="text" id="location" name="location" placeholder="Denver, CO"></input>
-            <input type="radio" name="sunEvent" id="sunset" value="sunset" checked>
-            <label for="sunset">sunset</label>
-            <input type="radio" name="sunEvent" id="sunrise" value="sunrise">
-            <label for="sunrise">sunrise</label>
-            <button type="submit" class="submit">Submit</button>
-            <button type="reset" class="reset">Reset</button>
+            <legend>Choose to see results for sunset or sunrise</legend>
+            <input id="sunset" type="radio" name="sunEvent" value="Sunset" class="sun-event" checked>
+            <label for="sunset">Sunset</label>
+            <input id="sunrise" type="radio" name="sunEvent" value="Sunrise" class="sun-event">
+            <label for="sunrise">Sunrise</label>
           </fieldset>
+          <button type="submit" name="submit" class="submit">Submit</button>
         </form>
+      </div>
         <p class="disclaimer">* currently this is only valid for the USA</p>
+      </section>
+      <section id="page-results">
+
       </section>
     </main>
     <!-- <div id="root"></div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="build/app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
