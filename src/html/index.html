@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SunsetWX</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>SkyFire
+      </header>
+      <section id="page-form">
+        <form name="location">
+          <fieldset>
+            <legend>Location and type of sun event</legend>
+            <label for="location">City, State</label>
+            <input type="text" id="location" name="location" placeholder="Denver, CO"></input>
+            <input type="radio" name="sunEvent" id="sunset" value="sunset" checked>
+            <label for="sunset">sunset</label>
+            <input type="radio" name="sunEvent" id="sunrise" value="sunrise">
+            <label for="sunrise">sunrise</label>
+            <button type="submit" class="submit">Submit</button>
+            <button type="reset" class="reset">Reset</button>
+          </fieldset>
+        </form>
+        <p class="disclaimer">* currently this is only valid for the USA</p>
+      </section>
+    </main>
+    <!-- <div id="root"></div> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="build/app.js"></script>
+  </body>
+</html>
