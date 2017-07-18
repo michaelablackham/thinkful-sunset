@@ -21,7 +21,7 @@ gulp.task('build:js', function () {
     .pipe(gulp.dest('./build'))
 })
 
-gulp.task('watch', function () {
+gulp.task('watch', ['build'], function () {
   gulp.watch([
     './src/html/*.html',
     './src/scss/*.scss',
