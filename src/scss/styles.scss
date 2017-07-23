@@ -1,7 +1,4 @@
-* {
-  font-family: 'Lato', sans-serif;
-}
-
-#page-results {
-  display: none;
-}
+@import 'base.scss';
+@import 'hero.scss';
+@import 'colors.scss';
+@import 'typography.scss';
