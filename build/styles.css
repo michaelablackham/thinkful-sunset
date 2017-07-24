@@ -56,9 +56,8 @@ body {
   align-items: center;
   justify-content: space-between; }
   .template-form__location fieldset {
-    border: 0; }
-    .template-form__location fieldset.location {
-      width: 100%; }
+    border: 0;
+    width: 100%; }
     .template-form__location fieldset legend {
       height: 0;
       overflow: hidden; }
@@ -76,22 +75,29 @@ body {
       color: #fff;
       opacity: .6; }
   .template-form__location .btn {
-    border: 3px solid #1a1a1a;
+    border-top: 1px solid #ab813f;
+    border-bottom: 1px solid #ab813f;
+    box-sizing: border-box;
     display: inline-block;
+    letter-spacing: .1em;
+    overflow: hidden;
     padding: 10px;
     position: relative;
     text-align: center;
-    transition: background 600ms ease, color 600ms ease; }
+    transition: background 600ms ease, color 600ms ease;
+    width: 50%;
+    text-transform: uppercase;
+    color: rgba(250, 250, 250, 0.5); }
   .template-form__location input[type="radio"].toggle {
     display: none; }
     .template-form__location input[type="radio"].toggle + label {
       cursor: pointer;
       min-width: 60px; }
       .template-form__location input[type="radio"].toggle + label:hover {
-        background: none;
-        color: #1a1a1a; }
+        background: rgba(212, 131, 1, 0.3);
+        color: rgba(250, 250, 250, 0.7); }
       .template-form__location input[type="radio"].toggle + label:after {
-        background: #1a1a1a;
+        background: #d48301;
         content: "";
         height: 100%;
         position: absolute;
@@ -100,13 +106,14 @@ body {
         width: 100%;
         z-index: -1; }
     .template-form__location input[type="radio"].toggle.toggle-left + label {
-      border-right: 0;
+      border-left: 1px solid #ab813f;
       border-radius: 10px 0 0 10px; }
       .template-form__location input[type="radio"].toggle.toggle-left + label:after {
         left: 100%; }
     .template-form__location input[type="radio"].toggle.toggle-right + label {
-      margin-left: -5px;
-      border-radius: 0 10px 10px 0; }
+      border-radius: 0 10px 10px 0;
+      border-right: 1px solid #ab813f;
+      margin-left: -5px; }
       .template-form__location input[type="radio"].toggle.toggle-right + label:after {
         left: -100%; }
     .template-form__location input[type="radio"].toggle:checked + label {
