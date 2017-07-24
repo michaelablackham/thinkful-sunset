@@ -24,6 +24,27 @@ App.Form = (function($) {
 
 })(jQuery);
 
+var App = App || {};
+
+App.Geolocation = (function ($) {
+  'use strict';
+
+  function getLocation (params) {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(position.coords.latitude, position.coords.longitude)
+        // do_something(position.coords.latitude, position.coords.longitude);
+      });
+    } else {
+      console.log("no location")
+    }
+  }
+
+  return {
+    getLocation: getLocation
+  }
+})(jQuery);
+
 // $(function() {
 //   'use strict';
 //
@@ -42,6 +63,7 @@ $(function() {
 
   App.State.addObserver(App.Results);
 
+  App.Geolocation.getLocation();
   App.State.get();
   App.Form.submit();
 });

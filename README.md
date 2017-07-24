@@ -7,7 +7,8 @@
 
 ## Tasks for Code
 - [x] Set up state
-- [ ] Get location from GPS
+- [x] Get location from GPS
+  - [ ] have lat/long change to city, state
   - [ ] have location fill in input
 - [ ] Pull in basic API info from backend
 - [ ]
