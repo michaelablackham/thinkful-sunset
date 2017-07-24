@@ -35,8 +35,8 @@
   }
 
   .btn{
-    border-top: 1px solid #ab813f;
-    border-bottom: 1px solid #ab813f;
+    border-top: 1px solid #9e7e78;
+    border-bottom: 1px solid #9e7e78;
     box-sizing: border-box;
     display: inline-block;
     letter-spacing: .1em;
@@ -69,9 +69,19 @@
               width: 100%;
               z-index: -1;
           }
+          &:before{
+              background: rgba(250,250,250,.2);
+              content: "";
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              z-index: -1;
+          }
       }
       &.toggle-left + label {
-          border-left: 1px solid #ab813f;
+          border-left: 1px solid #9e7e78;
           border-radius: 10px 0 0 10px;
           &:after{
               left: 100%;
@@ -79,7 +89,7 @@
       }
       &.toggle-right + label{
         border-radius: 0 10px 10px 0;
-        border-right: 1px solid #ab813f;
+        border-right: 1px solid #9e7e78;
         margin-left: -5px;
         &:after{
             left: -100%;
