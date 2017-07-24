@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  justify-content: center;
 
   fieldset {
     border: 0;
@@ -39,6 +40,7 @@
     border-bottom: 1px solid #9e7e78;
     box-sizing: border-box;
     display: inline-block;
+    font-size: .8em;
     letter-spacing: .1em;
     overflow: hidden;
     padding: 10px;
@@ -120,4 +122,8 @@
       background: #e89919;
     }
   }
+}
+
+.disclaimer {
+  text-align: center;
 }

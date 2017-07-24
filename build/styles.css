@@ -55,7 +55,8 @@ body {
 .template-form__location {
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  justify-content: center; }
   .template-form__location fieldset {
     border: 0;
     width: 100%; }
@@ -80,6 +81,7 @@ body {
     border-bottom: 1px solid #9e7e78;
     box-sizing: border-box;
     display: inline-block;
+    font-size: .8em;
     letter-spacing: .1em;
     overflow: hidden;
     padding: 10px;
@@ -144,6 +146,9 @@ body {
     text-transform: uppercase; }
     .template-form__location button:hover {
       background: #e89919; }
+
+.disclaimer {
+  text-align: center; }
 
 footer {
   position: fixed;
