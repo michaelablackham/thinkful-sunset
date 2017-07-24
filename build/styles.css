@@ -1,6 +1,6 @@
 h1 {
   color: #fff;
-  font-size: 5em;
+  font-size: 3.5em;
   font-weight: 900;
   letter-spacing: .1em;
   text-align: center;
@@ -11,6 +11,10 @@ h1 {
   color: #fff;
   font-family: 'Lato', sans-serif;
   font-size: 16px; }
+
+body {
+  margin: 0;
+  padding: 20px; }
 
 #page-results {
   display: none; }
@@ -29,30 +33,47 @@ h1 {
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%); }
 
-.template-for__location {
+.template-form {
+  max-width: 750px;
+  margin: 40px auto; }
+
+.template-form__location {
   display: flex;
-  flex-wrap: wrap; }
-  .template-for__location fieldset {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; }
+  .template-form__location fieldset {
     border: 0; }
-    .template-for__location fieldset legend {
+    .template-form__location fieldset legend {
       height: 0;
       overflow: hidden; }
-  .template-for__location .btn {
+  .template-form__location .sunset-location {
+    width: 60%;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 10px;
+    outline: 0;
+    margin: 0 20px 0 10px;
+    background: rgba(250, 250, 250, 0.3);
+    color: #fff; }
+    .template-form__location .sunset-location::placeholder {
+      color: #fff; }
+  .template-form__location .btn {
     border: 3px solid #1a1a1a;
     display: inline-block;
     padding: 10px;
     position: relative;
     text-align: center;
     transition: background 600ms ease, color 600ms ease; }
-  .template-for__location input[type="radio"].toggle {
+  .template-form__location input[type="radio"].toggle {
     display: none; }
-    .template-for__location input[type="radio"].toggle + label {
+    .template-form__location input[type="radio"].toggle + label {
       cursor: pointer;
       min-width: 60px; }
-      .template-for__location input[type="radio"].toggle + label:hover {
+      .template-form__location input[type="radio"].toggle + label:hover {
         background: none;
         color: #1a1a1a; }
-      .template-for__location input[type="radio"].toggle + label:after {
+      .template-form__location input[type="radio"].toggle + label:after {
         background: #1a1a1a;
         content: "";
         height: 100%;
@@ -61,23 +82,23 @@ h1 {
         transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
         width: 100%;
         z-index: -1; }
-    .template-for__location input[type="radio"].toggle.toggle-left + label {
+    .template-form__location input[type="radio"].toggle.toggle-left + label {
       border-right: 0;
       border-radius: 10px 0 0 10px; }
-      .template-for__location input[type="radio"].toggle.toggle-left + label:after {
+      .template-form__location input[type="radio"].toggle.toggle-left + label:after {
         left: 100%; }
-    .template-for__location input[type="radio"].toggle.toggle-right + label {
+    .template-form__location input[type="radio"].toggle.toggle-right + label {
       margin-left: -5px;
       border-radius: 0 10px 10px 0; }
-      .template-for__location input[type="radio"].toggle.toggle-right + label:after {
+      .template-form__location input[type="radio"].toggle.toggle-right + label:after {
         left: -100%; }
-    .template-for__location input[type="radio"].toggle:checked + label {
+    .template-form__location input[type="radio"].toggle:checked + label {
       cursor: default;
       color: #fff;
       transition: color 200ms; }
-      .template-for__location input[type="radio"].toggle:checked + label:after {
+      .template-form__location input[type="radio"].toggle:checked + label:after {
         left: 0; }
-  .template-for__location button {
+  .template-form__location button {
     background: rgba(250, 250, 250, 0.3);
     border: 0;
     border-radius: 40px;
@@ -87,7 +108,7 @@ h1 {
     padding: 10px 30px;
     outline: none;
     text-transform: uppercase; }
-    .template-for__location button:hover {
+    .template-form__location button:hover {
       background: rgba(250, 250, 250, 0.7); }
 
 footer ul {

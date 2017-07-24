@@ -1,6 +1,12 @@
-.template-for__location {
+.template-form {
+  max-width: 750px;
+  margin: 40px auto;
+}
+.template-form__location {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 
   fieldset {
     border: 0;
@@ -8,6 +14,21 @@
     legend {
       height:0;
       overflow: hidden;
+    }
+  }
+
+  .sunset-location {
+    width: 60%;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 10px;
+    outline: 0;
+    margin: 0 20px 0 10px;
+    background: rgba(250,250,250,.3);
+    color: $white;
+
+    &::placeholder {
+      color: $white;
     }
   }
 
