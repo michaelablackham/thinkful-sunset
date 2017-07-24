@@ -1,11 +1,15 @@
 h1 {
   color: $white;
-  font-size: 3.5em;
+  font-size: 2em;
   font-weight: 900;
   letter-spacing: .1em;
   text-align: center;
-  text-shadow: 1px 1px 5px #000;
+  text-shadow: 2px 2px 0px #666;
   text-transform: uppercase;
+
+  @media only screen and (min-width : 600px) {
+    font-size: 3em;
+  }
 }
 
 h2 {

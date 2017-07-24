@@ -1,6 +1,16 @@
 footer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  
   ul {
     list-style: none;
     padding: 0;
+
+    li {
+      font-size: .7em;
+    }
   }
 }
