@@ -10,6 +10,8 @@
 - [x] Get location from GPS
   - [ ] have lat/long change to city, state
   - [ ] have location fill in input
+  - [ ] create a cookie to not ask again for 1 month if allowed
+  - [ ] create a cookie to not ask again for 24hrs if blocked
 - [ ] Pull in basic API info from backend
 - [ ]
 

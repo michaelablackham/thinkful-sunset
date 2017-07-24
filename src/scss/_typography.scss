@@ -1,11 +1,11 @@
 h1 {
-  text-align: center;
+  color: $white;
   font-size: 5em;
   font-weight: 900;
-  text-transform: uppercase;
   letter-spacing: .1em;
-  color: $white;
+  text-align: center;
   text-shadow: 1px 1px 5px #000;
+  text-transform: uppercase;
 }
 
 h2 {
