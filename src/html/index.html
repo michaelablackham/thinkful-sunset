@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SunsetWX</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -23,7 +24,7 @@
         <form class="template-form__location flex" name="location">
           <fieldset class="location flex">
             <label for="location">Location *</label>
-            <input id="location" type="text" name="location" placeholder="City, State" class="sunset-location" required></input>
+            <input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>
           </fieldset>
           <fieldset class="sunevent">
             <legend>Choose to see results for sunset or sunrise</legend>
@@ -34,7 +35,7 @@
           </fieldset>
           <button type="submit" name="submit" class="submit">Get Forecast</button>
         </form>
-        <p class="disclaimer">* currently this is only valid for the USA</p>
+        <p class="disclaimer"><em>* currently this is only valid for the USA</em></p>
       </div>
       </section>
       <section id="page-results">

@@ -7,7 +7,7 @@ h1 {
   text-shadow: 2px 2px 0px #666;
   text-transform: uppercase;
 
-  @media only screen and (min-width : 600px) {
+  @media only screen and (min-width : 768px) {
     font-size: 3em;
   }
 }
