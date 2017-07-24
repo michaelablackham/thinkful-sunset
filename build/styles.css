@@ -19,7 +19,16 @@ body {
 #page-results {
   display: none; }
 
-.hero video {
+.hero .hero__mask {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -99;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.hero .hero__video {
   position: fixed;
   top: 50%;
   left: 50%;

@@ -12,7 +12,8 @@
     </header>
     <main>
       <div class="hero">
-        <video class=fixed playsinline autoplay muted loop id=bgvid>
+        <div class="hero__mask"></div>
+        <video class="fixed hero__video" playsinline autoplay muted loop id=bgvid>
           <source src="../src/images/videos/Orange-Ripple.mp4" type=video/mp4>
         </video>
       </div>
@@ -20,7 +21,7 @@
         <div class="template-form">
         <form class="template-form__location" name="location">
           <fieldset>
-            <label for="location">Location</label>
+            <label for="location">Location *</label>
             <input id="location" type="text" name="location" placeholder="City, State" class="sunset-location" required></input>
           </fieldset>
           <fieldset>
@@ -32,8 +33,8 @@
           </fieldset>
           <button type="submit" name="submit" class="submit">Submit</button>
         </form>
-      </div>
         <p class="disclaimer">* currently this is only valid for the USA</p>
+      </div>
       </section>
       <section id="page-results">
 
