@@ -1,6 +1,6 @@
 h1 {
   color: #fff;
-  font-size: 2.2em;
+  font-size: 1.8em;
   font-weight: 900;
   letter-spacing: .1em;
   margin-bottom: 0;
@@ -19,6 +19,9 @@ h1 {
     margin-left: -20%;
     bottom: 0;
     opacity: .5; }
+  @media only screen and (min-width: 400px) {
+    h1 {
+      font-size: 2.2em; } }
   @media only screen and (min-width: 768px) {
     h1 {
       font-size: 3em; } }
@@ -43,7 +46,12 @@ body {
 section {
   display: none; }
   section#page-home {
-    display: block; }
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center; }
 
 .flex {
   display: flex; }
@@ -186,7 +194,7 @@ header {
   top: 50%;
   margin-top: -190px; }
 
-footer {
+nav {
   background: #fff;
   bottom: 00px;
   left: 0;
@@ -194,14 +202,14 @@ footer {
   right: 0;
   text-align: center;
   box-shadow: 2px 0 20px #666; }
-  footer ul {
+  nav ul {
     display: flex;
     margin: 0;
     list-style: none;
     padding: 0;
     justify-content: space-around;
     align-content: space-around; }
-    footer ul li {
+    nav ul li {
       font-size: 1.3em;
       padding: 15px;
       border-left: 1px solid #e8e8e8;
@@ -209,5 +217,16 @@ footer {
       width: 25%;
       box-sizing: border-box;
       cursor: pointer; }
-      footer ul li i {
-        color: #b5b5b5; }
+      nav ul li:active, nav ul li:focus, nav ul li:hover {
+        background: rgba(239, 137, 82, 0.19); }
+      nav ul li i,
+      nav ul li svg {
+        color: #b5b5b5;
+        fill: #b5b5b5; }
+      nav ul li svg {
+        width: 30px; }
+      nav ul li.active {
+        border-top: 3px solid #ef8952; }
+        nav ul li.active i {
+          color: #ef8952;
+          fill: #ef8952; }

@@ -13,6 +13,11 @@ section {
 
   &#page-home {
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 }
 
