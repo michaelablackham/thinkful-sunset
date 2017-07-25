@@ -1,6 +1,6 @@
 h1 {
   color: #fff;
-  font-size: 2em;
+  font-size: 2.2em;
   font-weight: 900;
   letter-spacing: .1em;
   margin-bottom: 0;
@@ -40,8 +40,10 @@ body {
   margin: 0;
   padding: 20px; }
 
-#page-results {
+section {
   display: none; }
+  section#page-home {
+    display: block; }
 
 .flex {
   display: flex; }
@@ -173,6 +175,16 @@ body {
 
 .disclaimer {
   text-align: center; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+.page-home header {
+  top: 50%;
+  margin-top: -190px; }
 
 footer {
   background: #fff;
