@@ -19,3 +19,4 @@
 - [x] Set up gulp
 - [x] Sketch our wireframes
 - [ ] Make everything responsive (mobile first)
+- [ ] background color will be warmer the nicer the quality

@@ -4,7 +4,8 @@ App.State = (function ($) {
   var state = {
     location: '', //city state given for search
     sunType: '', // sunset or sunrise
-    forecast: null
+    forecast: null,
+    currentPage: 'pageHome',
     // forecast: {
     //   temperature: '', //convert from C to F
     //   recommendedTime: '', //recommended time for sunset/sunrise

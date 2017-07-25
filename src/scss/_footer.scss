@@ -1,16 +1,32 @@
 footer {
-  position: fixed;
-  bottom: 20px;
+  background: $white;
+  bottom: 00px;
   left: 0;
+  position: fixed;
   right: 0;
   text-align: center;
-  
+  box-shadow: 2px 0 20px #666;
+
   ul {
+    display: flex;
+    margin: 0;
     list-style: none;
     padding: 0;
+    justify-content: space-around;
+    align-content: space-around;
 
     li {
-      font-size: .7em;
+      font-size: 1.3em;
+      padding: 15px;
+      border-left: 1px solid #e8e8e8;
+      text-align: center;
+      width: 25%;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      i {
+        color: #b5b5b5;
+      }
     }
   }
 }
