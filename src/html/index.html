@@ -22,7 +22,7 @@
         </video>
       </div>
       <section id="page-home">
-        <p><i class="fa fa-location-arrow" aria-hidden="true"></i> Use current Location</p>
+        <button class="current-location"><i class="fa fa-location-arrow" aria-hidden="true"></i> Use current Location</button>
       </section>
       <section id="page-form">
         <div class="template-form">
@@ -33,24 +33,23 @@
           </fieldset>
           <fieldset class="sunevent">
             <legend>Choose to see results for sunset or sunrise</legend>
-            <input id="sunset" type="radio" name="sunEvent" value="Sunset" class="sun-event toggle toggle-left" checked>
+            <input id="sunset" type="radio" name="sunEvent" value="sunset" class="sun-event toggle toggle-left" checked>
             <label for="sunset" class="active btn">Sunset</label>
-            <input id="sunrise" type="radio" name="sunEvent" value="Sunrise" class="sun-event toggle toggle-right">
+            <input id="sunrise" type="radio" name="sunEvent" value="sunrise" class="sun-event toggle toggle-right">
             <label for="sunrise" class="btn">Sunrise</label>
           </fieldset>
-          <button type="submit" name="submit" class="submit">Get Forecast</button>
+          <button type="submit" name="submit" class="submit"><i class="fa fa-share" aria-hidden="true"></i></button>
         </form>
         <p class="disclaimer"><em>* currently this is only valid for the USA</em></p>
       </div>
       </section>
       <section id="page-results">
-
       </section>
-      <section id="page-about">
+      <!-- <section id="page-about">
         <h2>Powered by: <a href="https://sunsetwx.com/" target="_blank">SunsetWX</a></h2>
-      </section>
+      </section> -->
     </main>
-    <nav>
+    <!-- <nav>
       <ul>
         <li class="active"><i class="fa fa-home" aria-hidden="true"></i></li>
         <li><i class="fa fa-location-arrow" aria-hidden="true"></i></li>
@@ -58,7 +57,7 @@
         <li><i class="fa fa-clock-o" aria-hidden="true"></i></li>
         <li><i class="fa fa-info-circle" aria-hidden="true"></i></li>
       </ul>
-    </nav>
+    </nav> -->
     <!-- <div id="root"></div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>

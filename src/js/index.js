@@ -16,7 +16,7 @@ $(function() {
 
   App.State.addObserver(App.Results);
 
-  App.Geolocation.getLocation();
+  App.EventListeners.useCurrent();
   App.State.get();
   App.Form.submit();
 });

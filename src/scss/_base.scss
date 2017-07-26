@@ -9,7 +9,7 @@ padding: 20px;
 }
 
 section {
-  display: none;
+  // display: none;
 
   &#page-home {
     display: block;
@@ -23,4 +23,13 @@ section {
 
 .flex {
   display: flex;
+}
+
+button {
+  cursor: pointer;
+  outline: 0;
+  border: 2px solid $white;
+  padding: 15px 20px;
+  background: transparent;
+  border-radius: 40px;
 }

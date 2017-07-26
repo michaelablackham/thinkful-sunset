@@ -13,10 +13,11 @@
   - [ ] create a cookie to not ask again for 1 month if allowed
   - [ ] create a cookie to not ask again for 24hrs if blocked
 - [ ] Pull in basic API info from backend
-- [ ]
+- [ ] if current time is AFTER sunset --> default to sunrise
+- [ ] if current time is AFTER sunrise --> default to sunset
 
 ## Tasks for Design
 - [x] Set up gulp
 - [x] Sketch our wireframes
 - [ ] Make everything responsive (mobile first)
-- [ ] background color will be warmer the nicer the quality
+- [ ] background color will be warmer the nicer the quality & cooler on lower quality

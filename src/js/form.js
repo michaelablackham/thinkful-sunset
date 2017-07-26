@@ -9,12 +9,11 @@ App.Form = (function($) {
 
       var locationVal = $('.sunset-location').val();
       var sunVal = $('.sun-event:checked').val();
-      App.State.set({
-        location: locationVal,
-        sunType: sunVal
-      });
 
-      console.log(App.State.get());
+      App.Prediction.get({
+        type: sunVal,
+        address: locationVal
+      })
     });
   }
 
