@@ -40,6 +40,7 @@ h2 {
   font-family: 'Lato', sans-serif; }
 
 body {
+  background: #37374a;
   margin: 0;
   padding: 20px; }
 
@@ -54,7 +55,7 @@ section#page-home {
 .flex {
   display: flex; }
 
-button {
+main button {
   cursor: pointer;
   outline: 0;
   border: 2px solid #fff;
@@ -93,11 +94,9 @@ button {
   margin: 40px auto; }
 
 .template-form__location {
-  position: fixed;
   align-items: center;
   justify-content: space-between;
   justify-content: center;
-  background: #e6a233;
   padding-right: 60px;
   bottom: 0;
   left: 0;
@@ -181,16 +180,11 @@ button {
       .template-form__location input[type="radio"].toggle:checked + label:after {
         left: 0; }
   .template-form__location button {
-    background: #cc891d;
     border: 0;
-    font-size: 1.5em;
+    font-size: .8em;
     outline: none;
     text-transform: uppercase;
-    position: absolute;
-    right: 0;
-    width: 70px;
-    top: 0;
-    bottom: 0; }
+    padding: 10px 30px; }
     .template-form__location button:hover {
       background: #e89919; }
 
@@ -198,14 +192,24 @@ button {
   text-align: center; }
 
 header {
-  position: fixed;
-  top: 0;
   left: 0;
-  right: 0; }
+  position: fixed;
+  right: 0;
+  top: 0; }
+  header button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5em;
+    opacity: .5;
+    outline: 0;
+    position: fixed;
+    right: 20px;
+    top: 20px; }
 
 .page-home header {
-  top: 50%;
-  margin-top: -190px; }
+  margin-top: -190px;
+  top: 50%; }
 
 nav {
   background: #fff;

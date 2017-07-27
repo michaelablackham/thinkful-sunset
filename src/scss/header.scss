@@ -1,14 +1,25 @@
 header {
-  position: fixed;
-  top: 0;
   left: 0;
+  position: fixed;
   right: 0;
-  // display: none;
+  top: 0;
+
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5em;
+    opacity: .5;
+    outline: 0;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
 }
 
 .page-home {
   header {
-    top: 50%;
     margin-top: -190px;
+    top: 50%;
   }
 }

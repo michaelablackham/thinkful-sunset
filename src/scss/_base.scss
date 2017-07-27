@@ -4,6 +4,7 @@
 }
 
 body {
+  background: #37374a;
 margin: 0;
 padding: 20px;
 }
@@ -25,11 +26,13 @@ section {
   display: flex;
 }
 
-button {
-  cursor: pointer;
-  outline: 0;
-  border: 2px solid $white;
-  padding: 15px 20px;
-  background: transparent;
-  border-radius: 40px;
+main {
+  button {
+    cursor: pointer;
+    outline: 0;
+    border: 2px solid $white;
+    padding: 15px 20px;
+    background: transparent;
+    border-radius: 40px;
+  }
 }

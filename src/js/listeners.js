@@ -9,6 +9,12 @@ App.EventListeners = (function($) {
     });
   }
 
+  function getAboutInformation() {
+    $(".about-sunset").click(function(){
+      console.log("about section");
+    });
+  }
+
   return {
     useCurrent: useCurrentLocation
   }

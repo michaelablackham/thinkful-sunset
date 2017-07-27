@@ -15,9 +15,24 @@ App.Prediction = (function ($) {
       },
       dataType: 'json',
       type: 'GET'
-    });
-
-    console.log(prediction.type);
+    })
+      // .then(function (payload) {
+      //   // console.log('payload', payload);
+      //   App.State.set(
+      //     { forecast: {
+      //         qualityPercent: payload.prediction.quality_percent,
+      //         qualityString: payload.prediction.quality,
+      //         recommendedTime: payload.prediction.recommended_time,
+      //         temperature: payload.prediction.temperature
+      //       }
+      //     }
+      //   )
+      //   // return payload.quality;
+      //   console.log(App.State.get())
+      // })
+      // .then(function (quality) {
+        // console.log('quality', prediction.quality);
+      // })
   }
 
   return {

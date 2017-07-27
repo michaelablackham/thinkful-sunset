@@ -3,11 +3,11 @@
   margin: 40px auto;
 }
 .template-form__location {
-  position: fixed;
+  // position: fixed;
   align-items: center;
   justify-content: space-between;
   justify-content: center;
-  background: #e6a233;
+  // background: #e6a233;
   padding-right:60px;
   bottom: 0;
   left: 0;
@@ -114,16 +114,11 @@
   }
 
   button {
-    background: #cc891d;
     border: 0;
-    font-size: 1.5em;
+    font-size: .8em;
     outline: none;
     text-transform: uppercase;
-    position:absolute;
-    right: 0;
-    width: 70px;
-    top: 0;
-    bottom: 0;
+    padding: 10px 30px;
 
     &:hover {
       background: #e89919;

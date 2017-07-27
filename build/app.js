@@ -14,6 +14,19 @@ App.Form = (function($) {
         type: sunVal,
         address: locationVal
       })
+      .then(function (payload) {
+        console.log('payload', payload);
+        App.State.set({
+          sunType: payload.prediction.type,
+          location: locationVal,
+          forecast: {
+            qualityPercent: payload.prediction.quality_percent,
+            qualityString: payload.prediction.quality,
+            recommendedTime: payload.prediction.recommended_time,
+            temperature: payload.prediction.temperature
+          }
+        })
+      })
     });
   }
 
@@ -78,6 +91,12 @@ App.EventListeners = (function($) {
     });
   }
 
+  function getAboutInformation() {
+    $(".about-sunset").click(function(){
+      console.log("about section");
+    });
+  }
+
   return {
     useCurrent: useCurrentLocation
   }
@@ -101,9 +120,24 @@ App.Prediction = (function ($) {
       },
       dataType: 'json',
       type: 'GET'
-    });
-
-    console.log(prediction.type);
+    })
+      // .then(function (payload) {
+      //   // console.log('payload', payload);
+      //   App.State.set(
+      //     { forecast: {
+      //         qualityPercent: payload.prediction.quality_percent,
+      //         qualityString: payload.prediction.quality,
+      //         recommendedTime: payload.prediction.recommended_time,
+      //         temperature: payload.prediction.temperature
+      //       }
+      //     }
+      //   )
+      //   // return payload.quality;
+      //   console.log(App.State.get())
+      // })
+      // .then(function (quality) {
+        // console.log('quality', prediction.quality);
+      // })
   }
 
   return {
@@ -165,14 +199,27 @@ App.Results = (function($) {
   'use strict';
 
   var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location.</h2>';
+  var QUALITY_TEMPLATE = '<h3>@qualityPercent%</h3>'+
+    '<h4>@qualityString<h4>';
 
   function renderResults() {
     var state = App.State.get();
+
+    if (!state.forecast) {
+      return;
+    }
+
     $('#page-results').show();
+
     var newHeading = HEADING_TEMPLATE
       .replace('@sunEvent', state.sunType)
       .replace('@location', state.location);
-    $('#page-results').html(newHeading)
+    var newQuality = QUALITY_TEMPLATE
+      .replace('@qualityPercent', state.forecast.qualityPercent)
+      .replace('@qualityString', state.forecast.qualityString)
+      
+    $('#page-results').html(newHeading + newQuality)
+
   }
 
   function update () {
@@ -193,14 +240,7 @@ App.State = (function ($) {
     location: '', //city state given for search
     sunType: '', // sunset or sunrise
     forecast: null,
-    currentPage: 'pageHome',
-    // forecast: {
-    //   temperature: '', //convert from C to F
-    //   recommendedTime: '', //recommended time for sunset/sunrise
-    //   officialTime: '', //official time of sunset/sunrise
-    //   qualityPercent: '', //% 0-100 of quality of sunrise/sunset
-    //   qualityString: '' //% quality of sunrise/sunset in word
-    // }
+    currentPage: 'pageHome'
   };
 
   var observers = []

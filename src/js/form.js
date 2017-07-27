@@ -14,6 +14,19 @@ App.Form = (function($) {
         type: sunVal,
         address: locationVal
       })
+      .then(function (payload) {
+        console.log('payload', payload);
+        App.State.set({
+          sunType: payload.prediction.type,
+          location: locationVal,
+          forecast: {
+            qualityPercent: payload.prediction.quality_percent,
+            qualityString: payload.prediction.quality,
+            recommendedTime: payload.prediction.recommended_time,
+            temperature: payload.prediction.temperature
+          }
+        })
+      })
     });
   }
 
