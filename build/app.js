@@ -133,7 +133,7 @@ var App = App || {};
 App.Prediction = (function ($) {
   'use strict';
 
-  var API_BASE_URL = 'http://sunset-api.herokuapp.com'
+  var API_BASE_URL = 'https://sunset-api.herokuapp.com'
 
   function getPrediction (params) {
     return jQuery.ajax({
