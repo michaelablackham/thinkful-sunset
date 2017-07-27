@@ -95,15 +95,17 @@ main button {
 
 .template-form__location {
   align-items: center;
+  bottom: 0;
+  flex-wrap: wrap;
   justify-content: space-between;
   justify-content: center;
-  padding-right: 60px;
-  bottom: 0;
   left: 0;
+  position: absolute;
   right: 0; }
   .template-form__location fieldset {
     border: 0;
-    width: 100%; }
+    width: 100%;
+    text-align: left; }
     .template-form__location fieldset legend {
       height: 0;
       overflow: hidden; }
@@ -154,7 +156,6 @@ main button {
         z-index: -1;
         border-radius: 40px; }
       .template-form__location input[type="radio"].toggle + label:before {
-        background: #925f0d;
         content: "";
         height: 100%;
         position: absolute;
@@ -191,11 +192,16 @@ main button {
 .disclaimer {
   text-align: center; }
 
+#page-results {
+  padding-top: 200px; }
+
 header {
   left: 0;
   position: fixed;
   right: 0;
-  top: 0; }
+  top: 0;
+  margin-top: -190px;
+  top: 50%; }
   header button {
     background: transparent;
     border: 0;
@@ -207,9 +213,9 @@ header {
     right: 20px;
     top: 20px; }
 
-.page-home header {
-  margin-top: -190px;
-  top: 50%; }
+.resultsPage header {
+  margin-top: 0;
+  top: 0; }
 
 nav {
   background: #fff;

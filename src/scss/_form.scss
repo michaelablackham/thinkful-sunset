@@ -3,19 +3,19 @@
   margin: 40px auto;
 }
 .template-form__location {
-  // position: fixed;
   align-items: center;
+  bottom: 0;
+  flex-wrap: wrap;
   justify-content: space-between;
   justify-content: center;
-  // background: #e6a233;
-  padding-right:60px;
-  bottom: 0;
   left: 0;
+  position: absolute;
   right: 0;
 
   fieldset {
     border: 0;
     width: 100%;
+    text-align: left;
 
     legend {
       height:0;
@@ -78,7 +78,7 @@
               border-radius: 40px;
           }
           &:before{
-              background: #925f0d;
+              // background: #925f0d;
               content: "";
               height: 100%;
               position: absolute;

@@ -2,7 +2,9 @@ header {
   left: 0;
   position: fixed;
   right: 0;
-  top: 0; }
+  top: 0;
+  margin-top: -190px;
+  top: 50%; }
   header button {
     background: transparent;
     border: 0;
@@ -14,6 +16,6 @@ header {
     right: 20px;
     top: 20px; }
 
-.page-home header {
-  margin-top: -190px;
-  top: 50%; }
+.resultsPage header {
+  margin-top: 0;
+  top: 0; }

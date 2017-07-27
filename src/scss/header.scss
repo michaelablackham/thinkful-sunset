@@ -4,6 +4,9 @@ header {
   right: 0;
   top: 0;
 
+  margin-top: -190px;
+  top: 50%;
+
   button {
     background: transparent;
     border: 0;
@@ -17,9 +20,9 @@ header {
   }
 }
 
-.page-home {
+.resultsPage {
   header {
-    margin-top: -190px;
-    top: 50%;
+    margin-top: 0;
+    top: 0;
   }
 }

@@ -1,5 +1,30 @@
 var App = App || {};
 
+App.ConvertTime = (function($) {
+  'use strict';
+
+  function convertTime() {
+    var state = App.State.get();
+    var recommendedTime = new Date(state.forecast.recommendedTime).toLocaleTimeString();
+    return recommendedTime;
+
+  }
+
+  function convertDate() {
+    var state = App.State.get();
+    var sunEventDate = new Date(state.forecast.recommendedTime).toDateString();
+    return sunEventDate;
+  }
+
+  return {
+    recommendedTime: convertTime,
+    recommendedDate: convertDate
+  }
+
+})(jQuery);
+
+var App = App || {};
+
 App.Form = (function($) {
   'use strict';
 
@@ -198,9 +223,11 @@ var App = App || {};
 App.Results = (function($) {
   'use strict';
 
-  var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location.</h2>';
-  var QUALITY_TEMPLATE = '<h3>@qualityPercent%</h3>'+
-    '<h4>@qualityString<h4>';
+  var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location on @date.</h2>';
+  var QUALITY_TEMPLATE = '<h3 style="quality--percent">@qualityPercent%</h3>'+
+    '<h3 class="quality--string">@qualityString<h3>' +
+    '<h4 class="temperature">@temp<sup>&deg;F</sup></h4>' +
+    '<h4 class="time">@time</h4>';
 
   function renderResults() {
     var state = App.State.get();
@@ -209,16 +236,22 @@ App.Results = (function($) {
       return;
     }
 
+    $('body').toggleClass('resultsPage');
+    $('#page-home').hide();
     $('#page-results').show();
 
     var newHeading = HEADING_TEMPLATE
       .replace('@sunEvent', state.sunType)
-      .replace('@location', state.location);
+      .replace('@location', state.location)
+      .replace('@date', App.ConvertTime.recommendedDate());
+
     var newQuality = QUALITY_TEMPLATE
       .replace('@qualityPercent', state.forecast.qualityPercent)
       .replace('@qualityString', state.forecast.qualityString)
-      
-    $('#page-results').html(newHeading + newQuality)
+      .replace('@temp', App.ConvertTemp.fahrenheit())
+      .replace('@time', App.ConvertTime.recommendedTime());
+
+    $('#page-results').html(newHeading + newQuality);
 
   }
 
@@ -269,4 +302,21 @@ App.State = (function ($) {
     set: setState,
     addObserver: addObserver
   };
+})(jQuery);
+
+var App = App || {};
+
+App.ConvertTemp = (function($) {
+  'use strict';
+
+  function celsiusToFahrenheit() {
+    var state = App.State.get();
+    var currentTemp = state.forecast.temperature;
+    return Math.round(currentTemp * 9 / 5 + 32);
+  }
+
+  return {
+    fahrenheit: celsiusToFahrenheit
+  }
+
 })(jQuery);
