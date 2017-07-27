@@ -3,6 +3,7 @@ var App = App || {};
 App.Results = (function($) {
   'use strict';
 
+  var SUNSET_TEMPLATE = '<span class="currentIcon">@sunEvent</span>'
   var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location on @date.</h2>';
   var QUALITY_TEMPLATE = '<h3 style="quality--percent">@qualityPercent%</h3>'+
     '<h3 class="quality--string">@qualityString<h3>' +
@@ -12,6 +13,8 @@ App.Results = (function($) {
   function renderResults() {
     var state = App.State.get();
 
+    $('body').css('background-color', App.Colors.color());
+
     if (!state.forecast) {
       return;
     }
@@ -19,6 +22,14 @@ App.Results = (function($) {
     $('body').toggleClass('resultsPage');
     $('#page-home').hide();
     $('#page-results').show();
+
+    if(state.sunType === "Sunset") {
+      var newIcon = SUNSET_TEMPLATE
+      .replace('@sunEvent', App.Icons.sunset())
+    }
+    else {
+      console.log('sunrise')
+    }
 
     var newHeading = HEADING_TEMPLATE
       .replace('@sunEvent', state.sunType)
@@ -31,7 +42,7 @@ App.Results = (function($) {
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@time', App.ConvertTime.recommendedTime());
 
-    $('#page-results').html(newHeading + newQuality);
+    $('#page-results').html(newIcon + newHeading + newQuality);
 
   }
 

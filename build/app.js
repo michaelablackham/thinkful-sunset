@@ -1,5 +1,39 @@
 var App = App || {};
 
+App.Colors = (function($) {
+  'use strict';
+
+  var colors = [
+   '#362a3c',
+   '#282269',
+   '#224369',
+   '#226869,',
+   '#226939',
+   '#69a736',
+   '#bba132',
+   '#bb7a32',
+   '#a91c1c',
+   '#af0259'
+  ];
+
+  function renderColor() {
+    var state = App.State.get();
+    var qualityPercent = state.forecast.qualityPercent;
+    var colorWarmth = Math.round(qualityPercent/10) - 1;
+    var newColor = colors[colorWarmth];
+
+    return newColor
+  }
+
+
+  return {
+    color: renderColor
+  }
+
+})(jQuery);
+
+var App = App || {};
+
 App.ConvertTime = (function($) {
   'use strict';
 
@@ -80,6 +114,30 @@ App.Geolocation = (function ($) {
   return {
     getLocation: getLocation
   }
+})(jQuery);
+
+var App = App || {};
+
+App.Icons = (function($) {
+  'use strict';
+
+  function sunsetIcon() {
+    var sunsetIcon = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.74 63.21">' +
+    '<title>sunset</title>' +
+    '<path d="M1.29,40.89a2.85,2.85,0,0,1,1-2.32,3.06,3.06,0,0,1,2.32-.84h7.8a3.07,3.07,0,0,1,3.16,3.16,3.18,3.18,0,0,1-.91,2.29,3,3,0,0,1-2.25.95H4.63a3.27,3.27,0,0,1-2.36-.95A3.06,3.06,0,0,1,1.29,40.89ZM4.77,59.94a3.14,3.14,0,0,1,1-2.29A3.17,3.17,0,0,1,8,56.78H76.32a3.22,3.22,0,0,1,2.32.91,3,3,0,0,1,.95,2.25,3.3,3.3,0,0,1-3.27,3.27H8a3.14,3.14,0,0,1-2.3-1A3.14,3.14,0,0,1,4.77,59.94Zm7.66-45.63a2.79,2.79,0,0,1,.88-2.21,3,3,0,0,1,2.32-1,3,3,0,0,1,2.29,1l5.41,5.48a3,3,0,0,1,1,2.25,3.12,3.12,0,0,1-.9,2.3,3.07,3.07,0,0,1-2.27.9,3.29,3.29,0,0,1-2.25-.91l-5.59-5.52A2.88,2.88,0,0,1,12.44,14.31Zm9.74,26.58a18.75,18.75,0,0,0,2,8.75q.18.53.91.53h6.26c.28,0,.45-.08.51-.23s0-.36-.26-.62a13.36,13.36,0,0,1,1-18,13.17,13.17,0,0,1,9.56-3.94,13.47,13.47,0,0,1,13.5,13.46,12.86,12.86,0,0,1-3,8.44,1.31,1.31,0,0,0-.21.46.26.26,0,0,0,.11.28.63.63,0,0,0,.39.11h6.36a.86.86,0,0,0,.77-.53,18.37,18.37,0,0,0,2.11-8.75,19.45,19.45,0,0,0-2.71-10,20.18,20.18,0,0,0-7.33-7.33,19.83,19.83,0,0,0-20,0,20,20,0,0,0-7.31,7.33A19.55,19.55,0,0,0,22.18,40.89ZM38.95,11.14V3.3A3.23,3.23,0,0,1,39.89,1a3.06,3.06,0,0,1,2.29-1A3.18,3.18,0,0,1,44.5,1a3.18,3.18,0,0,1,1,2.32v7.84a3.36,3.36,0,0,1-3.3,3.3,3.06,3.06,0,0,1-2.29-1A3.23,3.23,0,0,1,38.95,11.14ZM60,19.83A3,3,0,0,1,61,17.58l5.41-5.48a3,3,0,0,1,2.32-1A3.17,3.17,0,0,1,71,12a3.13,3.13,0,0,1,.93,2.3,3.09,3.09,0,0,1-.84,2.29l-5.66,5.52a3.15,3.15,0,0,1-2.21.84A3,3,0,0,1,60,19.83Zm8.72,21.06a3,3,0,0,1,3.13-3.16h7.84a3.32,3.32,0,0,1,2.34.9,3,3,0,0,1,1,2.27,3.06,3.06,0,0,1-1,2.29,3.23,3.23,0,0,1-2.32.95H71.89a3,3,0,0,1-2.21-.95A3.17,3.17,0,0,1,68.76,40.89Z" transform="translate(-1.29)"/> '  + '</svg>';
+
+    return sunsetIcon
+  }
+
+  function sunriseIcon() {
+
+  }
+
+
+  return {
+    sunset: sunsetIcon
+  }
+
 })(jQuery);
 
 // $(function() {
@@ -223,6 +281,7 @@ var App = App || {};
 App.Results = (function($) {
   'use strict';
 
+  var SUNSET_TEMPLATE = '<span class="currentIcon">@sunEvent</span>'
   var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location on @date.</h2>';
   var QUALITY_TEMPLATE = '<h3 style="quality--percent">@qualityPercent%</h3>'+
     '<h3 class="quality--string">@qualityString<h3>' +
@@ -232,6 +291,8 @@ App.Results = (function($) {
   function renderResults() {
     var state = App.State.get();
 
+    $('body').css('background-color', App.Colors.color());
+
     if (!state.forecast) {
       return;
     }
@@ -239,6 +300,14 @@ App.Results = (function($) {
     $('body').toggleClass('resultsPage');
     $('#page-home').hide();
     $('#page-results').show();
+
+    if(state.sunType === "Sunset") {
+      var newIcon = SUNSET_TEMPLATE
+      .replace('@sunEvent', App.Icons.sunset())
+    }
+    else {
+      console.log('sunrise')
+    }
 
     var newHeading = HEADING_TEMPLATE
       .replace('@sunEvent', state.sunType)
@@ -251,7 +320,7 @@ App.Results = (function($) {
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@time', App.ConvertTime.recommendedTime());
 
-    $('#page-results').html(newHeading + newQuality);
+    $('#page-results').html(newIcon + newHeading + newQuality);
 
   }
 

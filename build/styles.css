@@ -37,6 +37,7 @@ h2 {
 
 * {
   color: #fff;
+  fill: #fff;
   font-family: 'Lato', sans-serif; }
 
 body {
@@ -192,8 +193,13 @@ main button {
 .disclaimer {
   text-align: center; }
 
+.resultsPage .hero {
+  opacity: .2; }
+
 #page-results {
   padding-top: 200px; }
+  #page-results .currentIcon svg {
+    width: 60px; }
 
 header {
   left: 0;

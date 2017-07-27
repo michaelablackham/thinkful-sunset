@@ -1,3 +1,13 @@
+.resultsPage {
+  .hero {
+    opacity: .2;
+  }
+}
+
 #page-results {
   padding-top: 200px;
+
+  .currentIcon svg {
+    width:60px;
+  }
 }
