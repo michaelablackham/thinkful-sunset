@@ -4,16 +4,26 @@ App.Colors = (function($) {
   'use strict';
 
   var colors = [
-   '#362a3c',
-   '#282269',
-   '#224369',
-   '#226869,',
-   '#226939',
-   '#69a736',
-   '#bba132',
-   '#bb7a32',
-   '#a91c1c',
-   '#af0259'
+  //  '#362a3c',
+  //  '#282269',
+  //  '#224369',
+  //  '#226869,',
+  //  '#226939',
+  //  '#69a736',
+  //  '#bba132',
+  //  '#bb7a32',
+  //  '#a91c1c',
+  //  '#af0259'
+  'low10',
+  'low20',
+  'low30',
+  'mid40',
+  'mid50',
+  'mid60',
+  'mid70',
+  'high80',
+  'high90',
+  'high100'
   ];
 
   function renderColor() {
@@ -50,9 +60,17 @@ App.ConvertTime = (function($) {
     return sunEventDate;
   }
 
+  function defaultEvent() {
+    var state = App.State.get();
+    console.log ('recommended time' + new Date(state.forecast.recommendedTime).getHours());
+    console.log ('current time' + new Date().getHours());
+    // if (state.forecast.recommendedTime <= )
+  }
+
   return {
     recommendedTime: convertTime,
-    recommendedDate: convertDate
+    recommendedDate: convertDate,
+    defaultEvent: defaultEvent
   }
 
 })(jQuery);
@@ -283,21 +301,20 @@ App.Results = (function($) {
 
   var SUNSET_TEMPLATE = '<span class="currentIcon">@sunEvent</span>'
   var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location on @date.</h2>';
-  var QUALITY_TEMPLATE = '<h3 style="quality--percent">@qualityPercent%</h3>'+
+  var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>'+
     '<h3 class="quality--string">@qualityString<h3>' +
     '<h4 class="temperature">@temp<sup>&deg;F</sup></h4>' +
     '<h4 class="time">@time</h4>';
+  var SUN_BACKGROUND = '<span class="sun @color-class"></span>';
 
   function renderResults() {
     var state = App.State.get();
-
-    $('body').css('background-color', App.Colors.color());
 
     if (!state.forecast) {
       return;
     }
 
-    $('body').toggleClass('resultsPage');
+    $('body').addClass('resultsPage');
     $('#page-home').hide();
     $('#page-results').show();
 
@@ -315,12 +332,15 @@ App.Results = (function($) {
       .replace('@date', App.ConvertTime.recommendedDate());
 
     var newQuality = QUALITY_TEMPLATE
-      .replace('@qualityPercent', state.forecast.qualityPercent)
+      .replace('@qualityPercent', Math.round(state.forecast.qualityPercent))
       .replace('@qualityString', state.forecast.qualityString)
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@time', App.ConvertTime.recommendedTime());
 
-    $('#page-results').html(newIcon + newHeading + newQuality);
+      console.log(App.ConvertTime.defaultEvent())
+      var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
+
+    $('#page-results').html(sunBackground + newIcon + newHeading + newQuality);
 
   }
 

@@ -16,9 +16,17 @@ App.ConvertTime = (function($) {
     return sunEventDate;
   }
 
+  function defaultEvent() {
+    var state = App.State.get();
+    console.log ('recommended time' + new Date(state.forecast.recommendedTime).getHours());
+    console.log ('current time' + new Date().getHours());
+    // if (state.forecast.recommendedTime <= )
+  }
+
   return {
     recommendedTime: convertTime,
-    recommendedDate: convertDate
+    recommendedDate: convertDate,
+    defaultEvent: defaultEvent
   }
 
 })(jQuery);
