@@ -4,33 +4,29 @@ App.Colors = (function($) {
   'use strict';
 
   var colors = [
-  //  '#362a3c',
-  //  '#282269',
-  //  '#224369',
-  //  '#226869,',
-  //  '#226939',
-  //  '#69a736',
-  //  '#bba132',
-  //  '#bb7a32',
-  //  '#a91c1c',
-  //  '#af0259'
-  'low10',
-  'low20',
-  'low30',
-  'mid40',
-  'mid50',
-  'mid60',
-  'mid70',
-  'high80',
-  'high90',
-  'high100'
+    'low10',
+    'low20',
+    'low30',
+    'mid40',
+    'mid50',
+    'mid60',
+    'mid70',
+    'high80',
+    'high90',
+    'high100'
   ];
 
   function renderColor() {
     var state = App.State.get();
     var qualityPercent = state.forecast.qualityPercent;
     var colorWarmth = Math.round(qualityPercent/10) - 1;
-    var newColor = colors[colorWarmth];
+    if (colorWarmth < 0) {
+      var newColor = colors[0];
+      console.log('0')
+    }
+    else {
+      var newColor = colors[colorWarmth];
+    }
 
     return newColor
   }
@@ -302,7 +298,7 @@ App.Results = (function($) {
   var SUNSET_TEMPLATE = '<span class="currentIcon">@sunEvent</span>'
   var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location on @date.</h2>';
   var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>'+
-    '<h3 class="quality--string">@qualityString<h3>' +
+    '<p class="quality--string">Your @sunEvent will be @qualityString quality!<p>' +
     '<h4 class="temperature">@temp<sup>&deg;F</sup></h4>' +
     '<h4 class="time">@time</h4>';
   var SUN_BACKGROUND = '<span class="sun @color-class"></span>';
@@ -318,13 +314,13 @@ App.Results = (function($) {
     $('#page-home').hide();
     $('#page-results').show();
 
-    if(state.sunType === "Sunset") {
-      var newIcon = SUNSET_TEMPLATE
-      .replace('@sunEvent', App.Icons.sunset())
-    }
-    else {
-      console.log('sunrise')
-    }
+    // if(state.sunType === "Sunset") {
+    //   var newIcon = SUNSET_TEMPLATE
+    //   .replace('@sunEvent', App.Icons.sunset())
+    // }
+    // else {
+    //   console.log('sunrise')
+    // }
 
     var newHeading = HEADING_TEMPLATE
       .replace('@sunEvent', state.sunType)
@@ -334,13 +330,14 @@ App.Results = (function($) {
     var newQuality = QUALITY_TEMPLATE
       .replace('@qualityPercent', Math.round(state.forecast.qualityPercent))
       .replace('@qualityString', state.forecast.qualityString)
+      .replace('@sunEvent', state.sunType)
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@time', App.ConvertTime.recommendedTime());
 
       console.log(App.ConvertTime.defaultEvent())
       var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(sunBackground + newIcon + newHeading + newQuality);
+    $('#page-results').html(sunBackground + newHeading + newQuality);
 
   }
 
