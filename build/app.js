@@ -22,15 +22,12 @@ App.Colors = (function($) {
     var colorWarmth = Math.round(qualityPercent/10) - 1;
     if (colorWarmth < 0) {
       var newColor = colors[0];
-      console.log('0')
     }
     else {
       var newColor = colors[colorWarmth];
     }
-
     return newColor
   }
-
 
   return {
     color: renderColor
@@ -47,7 +44,6 @@ App.ConvertTime = (function($) {
     var state = App.State.get();
     var recommendedTime = new Date(state.forecast.recommendedTime).toLocaleTimeString();
     return recommendedTime;
-
   }
 
   function convertDate() {
@@ -56,17 +52,18 @@ App.ConvertTime = (function($) {
     return sunEventDate;
   }
 
-  function defaultEvent() {
-    var state = App.State.get();
-    console.log ('recommended time' + new Date(state.forecast.recommendedTime).getHours());
-    console.log ('current time' + new Date().getHours());
-    // if (state.forecast.recommendedTime <= )
-  }
+  // function defaultEvent() {
+  //   var state = App.State.get();
+  //   recommendedHours = new Date(state.forecast.recommendedTime).getHours();
+  //   recommendedMinutes = new Date(state.forecast.recommendedTime).getMinutes();
+  //   currentHours = new Date().getHours();
+  //   currentMinutes = new Date().getMinutes();
+  // }
 
   return {
     recommendedTime: convertTime,
-    recommendedDate: convertDate,
-    defaultEvent: defaultEvent
+    recommendedDate: convertDate
+    // defaultEvent: defaultEvent
   }
 
 })(jQuery);
@@ -334,7 +331,7 @@ App.Results = (function($) {
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@time', App.ConvertTime.recommendedTime());
 
-      console.log(App.ConvertTime.defaultEvent())
+      // console.log(App.ConvertTime.defaultEvent())
       var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
     $('#page-results').html(sunBackground + newHeading + newQuality);

@@ -42,7 +42,7 @@ App.Results = (function($) {
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@time', App.ConvertTime.recommendedTime());
 
-      console.log(App.ConvertTime.defaultEvent())
+      // console.log(App.ConvertTime.defaultEvent())
       var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
     $('#page-results').html(sunBackground + newHeading + newQuality);

@@ -22,15 +22,12 @@ App.Colors = (function($) {
     var colorWarmth = Math.round(qualityPercent/10) - 1;
     if (colorWarmth < 0) {
       var newColor = colors[0];
-      console.log('0')
     }
     else {
       var newColor = colors[colorWarmth];
     }
-
     return newColor
   }
-
 
   return {
     color: renderColor

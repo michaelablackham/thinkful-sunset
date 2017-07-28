@@ -206,6 +206,9 @@ main button {
   padding-top: 100px; }
   #page-results .currentIcon svg {
     width: 60px; }
+  #page-results h2 {
+    font-weight: normal;
+    font-size: 1em; }
 
 .quality--percent {
   font-weight: 900;
