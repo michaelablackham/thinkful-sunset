@@ -6,13 +6,18 @@ App.Prediction = (function ($) {
   var API_BASE_URL = 'https://sunset-api.herokuapp.com'
 
   function getPrediction (params) {
+    var queryParams = {
+      type: params.type
+    }
+
+    params.coords
+      ? queryParams.coords = param.coords
+      : queryParams.address = params.address
+
     return jQuery.ajax({
       async: true,
       url: API_BASE_URL + '/predict',
-      data: {
-        type: params.type,
-        address: params.address
-      },
+      data: queryParams,
       dataType: 'json',
       type: 'GET'
     })
