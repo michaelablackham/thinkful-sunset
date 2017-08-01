@@ -1,16 +1,14 @@
 .template-form {
-  max-width: 750px;
   margin: 40px auto;
+  max-width: 750px;
+  width: 90%;
 }
+
 .template-form__location {
   align-items: center;
-  bottom: 0;
   flex-wrap: wrap;
   justify-content: space-between;
   justify-content: center;
-  left: 0;
-  position: absolute;
-  right: 0;
 
   fieldset {
     border: 0;
@@ -25,7 +23,7 @@
 
   .sunset-location {
     padding: 10px 15px;
-    border: 1px solid #925f0d;
+    border: 2px solid $white;
     border-radius: 10px;
     box-sizing: border-box;
     outline: 0;
@@ -41,8 +39,8 @@
   }
 
   .btn{
-    border-top: 2px solid #925f0d;
-    border-bottom: 2px solid #925f0d;
+    border-top: 2px solid  $white;
+    border-bottom: 2px solid  $white;
     box-sizing: border-box;
     display: inline-block;
     font-size: .8em;
@@ -55,7 +53,7 @@
     width: 48%;
     margin: 0 1px;
     text-transform: uppercase;
-    color: #e29415;
+    color: $white;
   }
 
   input[type="radio"].toggle {
@@ -64,7 +62,6 @@
           cursor: pointer;
           min-width: 60px;
           &:hover{
-            color: #fff;
           }
           &:after{
               background: #e29415;
@@ -78,7 +75,6 @@
               border-radius: 40px;
           }
           &:before{
-              // background: #925f0d;
               content: "";
               height: 100%;
               position: absolute;
@@ -89,7 +85,7 @@
           }
       }
       &.toggle-left + label {
-          border-left: 2px solid #925f0d;
+          border-left: 2px solid  $white;
           border-radius: 40px 0 0 40px;
           &:after{
               left: 100%;
@@ -97,7 +93,7 @@
       }
       &.toggle-right + label{
         border-radius: 0 40px 40px 0;
-        border-right: 2px solid #925f0d;
+        border-right: 2px solid  $white;
         margin-left: -5px;
         &:after{
             left: -100%;
@@ -107,6 +103,7 @@
           cursor: default;
           color: #fff;
           transition: color 200ms;
+          opacity: 1;
           &:after{
               left: 0;
           }

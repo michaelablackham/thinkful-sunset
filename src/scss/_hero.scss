@@ -1,3 +1,21 @@
+.loading-screen {
+  align-items: center;
+  background: rgba(13, 13, 29, 0.8);
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 99;
+
+  &.active {
+    display: flex;
+  }
+}
+
 .hero {
   position: fixed;
   z-index: -10;

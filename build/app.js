@@ -79,6 +79,7 @@ App.Form = (function($) {
 
       var locationVal = $('.sunset-location').val();
       var sunVal = $('.sun-event:checked').val();
+      $('.loading-screen').addClass("active");
 
       App.Prediction.get({
         type: sunVal,
@@ -182,12 +183,6 @@ App.EventListeners = (function($) {
   function useCurrentLocation() {
     $(".current-location").click(function(){
       App.Geolocation.getLocation();
-    });
-  }
-
-  function getAboutInformation() {
-    $(".about-sunset").click(function(){
-      console.log("about section");
     });
   }
 
@@ -312,6 +307,7 @@ App.Results = (function($) {
       return;
     }
 
+    $('.loading-screen').removeClass("active");
     $('body').addClass('resultsPage');
     $('#page-home').hide();
     $('#page-results').show();

@@ -9,6 +9,7 @@ App.Form = (function($) {
 
       var locationVal = $('.sunset-location').val();
       var sunVal = $('.sun-event:checked').val();
+      $('.loading-screen').addClass("active");
 
       App.Prediction.get({
         type: sunVal,

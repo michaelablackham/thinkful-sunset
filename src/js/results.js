@@ -18,6 +18,7 @@ App.Results = (function($) {
       return;
     }
 
+    $('.loading-screen').removeClass("active");
     $('body').addClass('resultsPage');
     $('#page-home').hide();
     $('#page-results').show();

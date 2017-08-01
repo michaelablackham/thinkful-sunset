@@ -13,22 +13,18 @@
     <header>
       <h1>Twilight Fire</h1>
       <h2 class="subtitle">Sunrise &amp; Sunset Quality Predictor</h2>
-      <button class="about-sunset"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
     </header>
+    <section id="page-loading" class="loading-screen">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </section>
     <main>
-      <div class="hero">
-        <div class="hero__mask"></div>
-        <video class="fixed hero__video" playsinline autoplay muted loop id=bgvid>
-          <source src="../src/images/videos/Orange-Ripple.mp4" type=video/mp4>
-        </video>
-      </div>
       <section id="page-home">
-        <!-- <button class="current-location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button> -->
         <div class="template-form">
         <form class="template-form__location flex" name="location">
           <fieldset class="location flex">
             <label for="location">Location *</label>
             <input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>
+            <button class="current-location" title="get current location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
           </fieldset>
           <fieldset class="sunevent">
             <legend>Choose to see results for sunset or sunrise</legend>
@@ -39,12 +35,15 @@
           </fieldset>
           <button type="submit" name="submit" class="submit">Get Prediction</button>
         </form>
-        <p class="disclaimer"><em>* currently this is only valid for the USA</em></p>
+        <p class="disclaimer"><em>* Currently only valid for the US. Not including <em>Alaska</em> and <em>Hawaii</em></p>
       </div>
       </section>
       <section id="page-results">
       </section>
     </main>
+    <footer>
+      <small>Powered by <a href="sunsetwx.com/" target="_blank">SunsetWX</a></small>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
