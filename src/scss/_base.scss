@@ -6,8 +6,21 @@
 
 body {
   background: #37374a;
-margin: 0;
-padding: 20px;
+  margin: 0;
+  padding: 20px;
+}
+
+.background-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -3;
+  background: #362a3c; /* Old browsers */
+  background: -moz-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at 100% 100%, #0a0f33 0%,  #1b3065 10%,  #6f2e5b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 section {
@@ -32,9 +45,7 @@ main {
   button {
     cursor: pointer;
     outline: 0;
-    border: 2px solid $white;
-    padding: 15px 20px;
+    border: 0;
     background: transparent;
-    border-radius: 40px;
   }
 }

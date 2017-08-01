@@ -43,6 +43,22 @@ body {
   margin: 0;
   padding: 20px; }
 
+.background-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -3;
+  background: #362a3c;
+  /* Old browsers */
+  background: -moz-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at 100% 100%, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+
 section {
   z-index: 2; }
   section#page-home {
@@ -59,10 +75,8 @@ section {
 main button {
   cursor: pointer;
   outline: 0;
-  border: 2px solid #fff;
-  padding: 15px 20px;
-  background: transparent;
-  border-radius: 40px; }
+  border: 0;
+  background: transparent; }
 
 .loading-screen {
   align-items: center;
@@ -124,33 +138,47 @@ main button {
     .template-form__location fieldset legend {
       height: 0;
       overflow: hidden; }
+    .template-form__location fieldset label {
+      margin-left: 17px;
+      margin-bottom: 10px; }
   .template-form__location .sunset-location {
-    padding: 10px 15px;
-    border: 2px solid #fff;
-    border-radius: 10px;
+    background: transparent;
+    border: 0;
     box-sizing: border-box;
-    outline: 0;
-    background: rgba(250, 250, 250, 0.2);
     color: #fff;
-    width: 100%;
-    font-size: 1em; }
+    font-size: 1em;
+    outline: 0;
+    padding: 15px 70px 15px 15px;
+    width: 100%; }
     .template-form__location .sunset-location::placeholder {
       color: #fff;
       opacity: .6; }
+  .template-form__location .location-wrapper {
+    border: 2px solid #bb4c82;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden; }
+    .template-form__location .location-wrapper .current-location {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      padding: 0 20px 0 15px;
+      background: #bb4c82; }
   .template-form__location .btn {
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-top: 2px solid #bb4c82;
+    border-bottom: 2px solid #bb4c82;
     box-sizing: border-box;
     display: inline-block;
     font-size: .8em;
     letter-spacing: .1em;
     overflow: hidden;
-    padding: 10px;
+    padding: 15px;
     position: relative;
     text-align: center;
     transition: background 600ms ease, color 600ms ease;
-    width: 48%;
-    margin: 0 1px;
+    width: 50%;
+    margin: 0;
     text-transform: uppercase;
     color: #fff; }
   .template-form__location input[type="radio"].toggle {
@@ -159,7 +187,7 @@ main button {
       cursor: pointer;
       min-width: 60px; }
       .template-form__location input[type="radio"].toggle + label:after {
-        background: #e29415;
+        background: #bb4c82;
         content: "";
         height: 100%;
         position: absolute;
@@ -177,13 +205,13 @@ main button {
         width: 100%;
         z-index: -1; }
     .template-form__location input[type="radio"].toggle.toggle-left + label {
-      border-left: 2px solid #fff;
+      border-left: 2px solid #bb4c82;
       border-radius: 40px 0 0 40px; }
       .template-form__location input[type="radio"].toggle.toggle-left + label:after {
         left: 100%; }
     .template-form__location input[type="radio"].toggle.toggle-right + label {
       border-radius: 0 40px 40px 0;
-      border-right: 2px solid #fff;
+      border-right: 2px solid #bb4c82;
       margin-left: -5px; }
       .template-form__location input[type="radio"].toggle.toggle-right + label:after {
         left: -100%; }
@@ -194,17 +222,21 @@ main button {
       opacity: 1; }
       .template-form__location input[type="radio"].toggle:checked + label:after {
         left: 0; }
-  .template-form__location button {
+  .template-form__location button[type="submit"] {
     border: 0;
     font-size: .8em;
     outline: none;
     text-transform: uppercase;
-    padding: 10px 30px; }
-    .template-form__location button:hover {
-      background: #e89919; }
+    padding: 15px 30px;
+    border-radius: 40px;
+    background: #bb4c82; }
+    .template-form__location button[type="submit"]:hover {
+      background: #bb4c82; }
 
 .disclaimer {
-  text-align: center; }
+  opacity: .7;
+  text-align: center;
+  width: 100%; }
 
 .resultsPage {
   background-color: #0000b5; }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="background-color"></div>
     <header>
       <h1>Twilight Fire</h1>
       <h2 class="subtitle">Sunrise &amp; Sunset Quality Predictor</h2>
@@ -23,8 +24,10 @@
         <form class="template-form__location flex" name="location">
           <fieldset class="location flex">
             <label for="location">Location *</label>
-            <input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>
-            <button class="current-location" title="get current location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
+            <div class="location-wrapper">
+              <input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>
+              <button class="current-location" title="get current location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
+            </div>
           </fieldset>
           <fieldset class="sunevent">
             <legend>Choose to see results for sunset or sunrise</legend>
@@ -33,9 +36,9 @@
             <input id="sunrise" type="radio" name="sunEvent" value="sunrise" class="sun-event toggle toggle-right">
             <label for="sunrise" class="btn">Sunrise</label>
           </fieldset>
+          <p class="disclaimer"><em>* Currently only valid for the US. Not including <strong>Alaska</strong> or <strong>Hawaii</strong></em></p>
           <button type="submit" name="submit" class="submit">Get Prediction</button>
         </form>
-        <p class="disclaimer"><em>* Currently only valid for the US. Not including <em>Alaska</em> and <em>Hawaii</em></p>
       </div>
       </section>
       <section id="page-results">
