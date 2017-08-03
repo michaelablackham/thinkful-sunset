@@ -3,6 +3,9 @@ header {
   position: fixed;
   right: 0;
   top: 20%;
+  transition-duration: .1s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
 
   button {
     background: transparent;

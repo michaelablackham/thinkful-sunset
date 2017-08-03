@@ -64,14 +64,6 @@ App.ConvertTime = (function($) {
     return sunEventToDate;
   }
 
-  // function defaultEvent() {
-  //   var state = App.State.get();
-  //   recommendedHours = new Date(state.forecast.recommendedTime).getHours();
-  //   recommendedMinutes = new Date(state.forecast.recommendedTime).getMinutes();
-  //   currentHours = new Date().getHours();
-  //   currentMinutes = new Date().getMinutes();
-  // }
-
   return {
     recommendedTime: convertTime,
     recommendedDOW: convertToDOW,
@@ -99,7 +91,6 @@ App.Form = (function($) {
         address: locationVal
       })
       .then(function (payload) {
-        console.log('payload', payload);
         App.State.set({
           sunType: payload.prediction.type,
           location: locationVal,
@@ -129,7 +120,6 @@ App.Geolocation = (function ($) {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function(position) {
         console.log(position.coords.latitude, position.coords.longitude)
-        // do_something(position.coords.latitude, position.coords.longitude);
       });
     } else {
       console.log("no location")
@@ -165,18 +155,11 @@ App.Icons = (function($) {
 
 })(jQuery);
 
-// $(function() {
-//   'use strict';
-//
 //   var BASE_URL = 'https://sunsetwx.com/'
 //   var REG_KEY = '0OdKkau61SPKMU0GcLfPz9cI';
 //   var ENPOINT = '/v1/register';
 //   var PASSWORD = "B13b18a2"
-//
-//   console.log("hello world!")
-//
-// }
-// });
+
 
 $(function() {
   'use strict';
@@ -228,23 +211,6 @@ App.Prediction = (function ($) {
       dataType: 'json',
       type: 'GET'
     })
-      // .then(function (payload) {
-      //   // console.log('payload', payload);
-      //   App.State.set(
-      //     { forecast: {
-      //         qualityPercent: payload.prediction.quality_percent,
-      //         qualityString: payload.prediction.quality,
-      //         recommendedTime: payload.prediction.recommended_time,
-      //         temperature: payload.prediction.temperature
-      //       }
-      //     }
-      //   )
-      //   // return payload.quality;
-      //   console.log(App.State.get())
-      // })
-      // .then(function (quality) {
-        // console.log('quality', prediction.quality);
-      // })
   }
 
   return {
@@ -310,11 +276,11 @@ App.Results = (function($) {
   var DATE_TEMPLATE = '<h2 class="heading-date">@dow, @month @date</h2>';
   var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>';
   var EXTRA_INFO_TEMPLATE = '<table> <tbody>' +
-    '<tr><td>Day:</td><td>@dow</td></tr>' +
-    '<tr><td>Sun Event:</td><td>@sunEvent</td></tr>' +
-    '<tr><td>Time:</td><td> @time</td></tr>'+
-    '<tr><td>Quality:</td><td>@qualityString</td></tr>' +
-    '<tr><td>Temperature:</td><td>@temp<sup>&deg;F</sup></td></tr>' +
+    '<tr><td>Day</td><td>@dow</td></tr>' +
+    '<tr><td>Sun Event</td><td>@sunEvent</td></tr>' +
+    '<tr><td>Time</td><td> @time</td></tr>' +
+    '<tr><td>Quality</td><td>@qualityString</td></tr>' +
+    '<tr><td>Temperature</td><td>@temp<sup>&deg;F</sup></td></tr>' +
     '</tbody> </table>';
   var SUN_BACKGROUND = '<span class="sun @color-class"></span>';
 
@@ -325,21 +291,14 @@ App.Results = (function($) {
       return;
     }
 
-    $('.loading-screen').removeClass("active");
+    $('.loading-screen').removeClass('active');
     $('body').addClass('resultsPage');
     $('#page-home').hide();
     $('#page-results').show();
 
-    // if(state.sunType === "Sunset") {
-    //   var newIcon = SUNSET_TEMPLATE
-    //   .replace('@sunEvent', App.Icons.sunset())
-    // }
-    // else {
-    //   console.log('sunrise')
-    // }
-
     var newLocation = LOCATION_TEMPLATE
-      .replace('@location', state.location)
+      .replace('@location', state.location);
+
     var newDate = DATE_TEMPLATE
       .replace('@dow', App.ConvertTime.recommendedDOW())
       .replace('@month', App.ConvertTime.recommendedMonth())
@@ -355,14 +314,12 @@ App.Results = (function($) {
       .replace('@qualityString', state.forecast.qualityString)
       .replace('@time', App.ConvertTime.recommendedTime());
 
-      // console.log(App.ConvertTime.defaultEvent())
-      var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
+    var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
     $('#page-results').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
-
   }
 
-  function update () {
+  function update() {
     renderResults();
   }
 

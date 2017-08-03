@@ -27,14 +27,6 @@ App.ConvertTime = (function($) {
     return sunEventToDate;
   }
 
-  // function defaultEvent() {
-  //   var state = App.State.get();
-  //   recommendedHours = new Date(state.forecast.recommendedTime).getHours();
-  //   recommendedMinutes = new Date(state.forecast.recommendedTime).getMinutes();
-  //   currentHours = new Date().getHours();
-  //   currentMinutes = new Date().getMinutes();
-  // }
-
   return {
     recommendedTime: convertTime,
     recommendedDOW: convertToDOW,

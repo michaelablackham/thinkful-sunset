@@ -8,11 +8,11 @@ App.Results = (function($) {
   var DATE_TEMPLATE = '<h2 class="heading-date">@dow, @month @date</h2>';
   var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>';
   var EXTRA_INFO_TEMPLATE = '<table> <tbody>' +
-    '<tr><td>Day:</td><td>@dow</td></tr>' +
-    '<tr><td>Sun Event:</td><td>@sunEvent</td></tr>' +
-    '<tr><td>Time:</td><td> @time</td></tr>'+
-    '<tr><td>Quality:</td><td>@qualityString</td></tr>' +
-    '<tr><td>Temperature:</td><td>@temp<sup>&deg;F</sup></td></tr>' +
+    '<tr><td>Day</td><td>@dow</td></tr>' +
+    '<tr><td>Sun Event</td><td>@sunEvent</td></tr>' +
+    '<tr><td>Time</td><td> @time</td></tr>' +
+    '<tr><td>Quality</td><td>@qualityString</td></tr>' +
+    '<tr><td>Temperature</td><td>@temp<sup>&deg;F</sup></td></tr>' +
     '</tbody> </table>';
   var SUN_BACKGROUND = '<span class="sun @color-class"></span>';
 
@@ -23,21 +23,14 @@ App.Results = (function($) {
       return;
     }
 
-    $('.loading-screen').removeClass("active");
+    $('.loading-screen').removeClass('active');
     $('body').addClass('resultsPage');
     $('#page-home').hide();
     $('#page-results').show();
 
-    // if(state.sunType === "Sunset") {
-    //   var newIcon = SUNSET_TEMPLATE
-    //   .replace('@sunEvent', App.Icons.sunset())
-    // }
-    // else {
-    //   console.log('sunrise')
-    // }
-
     var newLocation = LOCATION_TEMPLATE
-      .replace('@location', state.location)
+      .replace('@location', state.location);
+
     var newDate = DATE_TEMPLATE
       .replace('@dow', App.ConvertTime.recommendedDOW())
       .replace('@month', App.ConvertTime.recommendedMonth())
@@ -53,14 +46,12 @@ App.Results = (function($) {
       .replace('@qualityString', state.forecast.qualityString)
       .replace('@time', App.ConvertTime.recommendedTime());
 
-      // console.log(App.ConvertTime.defaultEvent())
-      var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
+    var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
     $('#page-results').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
-
   }
 
-  function update () {
+  function update() {
     renderResults();
   }
 

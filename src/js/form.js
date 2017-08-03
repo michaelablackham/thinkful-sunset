@@ -16,7 +16,6 @@ App.Form = (function($) {
         address: locationVal
       })
       .then(function (payload) {
-        console.log('payload', payload);
         App.State.set({
           sunType: payload.prediction.type,
           location: locationVal,
