@@ -358,7 +358,7 @@ App.Results = (function($) {
       // console.log(App.ConvertTime.defaultEvent())
       var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(sunBackground + newLocation + newDate + newQuality + newQualityInfo);
+    $('#page-results').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
 
   }
 
