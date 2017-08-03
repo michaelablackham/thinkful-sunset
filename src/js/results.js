@@ -3,12 +3,17 @@ var App = App || {};
 App.Results = (function($) {
   'use strict';
 
-  var SUNSET_TEMPLATE = '<span class="currentIcon">@sunEvent</span>'
-  var HEADING_TEMPLATE = '<h2>@sunEvent Forecast for @location on @date.</h2>';
-  var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>'+
-    '<p class="quality--string">Your @sunEvent will be @qualityString quality!<p>' +
-    '<h4 class="temperature">@temp<sup>&deg;F</sup></h4>' +
-    '<h4 class="time">@time</h4>';
+  var SUNSET_TEMPLATE = '<span class="currentIcon">@sunEvent</span>';
+  var LOCATION_TEMPLATE = '<h2 class="heading-location">@location</h2>';
+  var DATE_TEMPLATE = '<h2 class="heading-date">@dow, @month @date</h2>';
+  var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>';
+  var EXTRA_INFO_TEMPLATE = '<table> <tbody>' +
+    '<tr><td>Day:</td><td>@dow</td></tr>' +
+    '<tr><td>Sun Event:</td><td>@sunEvent</td></tr>' +
+    '<tr><td>Time:</td><td> @time</td></tr>'+
+    '<tr><td>Quality:</td><td>@qualityString</td></tr>' +
+    '<tr><td>Temperature:</td><td>@temp<sup>&deg;F</sup></td></tr>' +
+    '</tbody> </table>';
   var SUN_BACKGROUND = '<span class="sun @color-class"></span>';
 
   function renderResults() {
@@ -31,22 +36,27 @@ App.Results = (function($) {
     //   console.log('sunrise')
     // }
 
-    var newHeading = HEADING_TEMPLATE
-      .replace('@sunEvent', state.sunType)
+    var newLocation = LOCATION_TEMPLATE
       .replace('@location', state.location)
+    var newDate = DATE_TEMPLATE
+      .replace('@dow', App.ConvertTime.recommendedDOW())
+      .replace('@month', App.ConvertTime.recommendedMonth())
       .replace('@date', App.ConvertTime.recommendedDate());
 
     var newQuality = QUALITY_TEMPLATE
-      .replace('@qualityPercent', Math.round(state.forecast.qualityPercent))
-      .replace('@qualityString', state.forecast.qualityString)
+      .replace('@qualityPercent', Math.round(state.forecast.qualityPercent));
+
+    var newQualityInfo = EXTRA_INFO_TEMPLATE
+      .replace('@dow', App.ConvertTime.recommendedDOW())
       .replace('@sunEvent', state.sunType)
       .replace('@temp', App.ConvertTemp.fahrenheit())
+      .replace('@qualityString', state.forecast.qualityString)
       .replace('@time', App.ConvertTime.recommendedTime());
 
       // console.log(App.ConvertTime.defaultEvent())
       var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(sunBackground + newHeading + newQuality);
+    $('#page-results').html(sunBackground + newLocation + newDate + newQuality + newQualityInfo);
 
   }
 
