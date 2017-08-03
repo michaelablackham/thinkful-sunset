@@ -240,16 +240,20 @@ main button {
   width: 100%;
   margin-bottom: 30px; }
 
-.resultsPage {
-  background-color: #0000b5; }
-  .resultsPage .hero {
+.resultsPage .hero {
+  display: none; }
+
+.resultsPage h1 {
+  font-size: 1em; }
+  .resultsPage h1:after {
     display: none; }
-  .resultsPage h1 {
-    font-size: 1em; }
-    .resultsPage h1:after {
-      display: none; }
-  .resultsPage h2.subtitle {
-    display: none; }
+
+.resultsPage h2.subtitle {
+  display: none; }
+
+.resultsPage footer {
+  margin-top: 40px;
+  position: static; }
 
 #page-results {
   margin: 0 auto;

@@ -1,5 +1,4 @@
 .resultsPage {
-  background-color: #0000b5;
 
   .hero {
     display: none;
@@ -8,12 +7,18 @@
   h1 {
     font-size: 1em;
 
-    &:after{
+    &:after {
       display: none;
     }
   }
+
   h2.subtitle {
     display: none;
+  }
+
+  footer {
+    margin-top: 40px;
+    position: static;
   }
 }
 
