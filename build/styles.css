@@ -237,7 +237,8 @@ main button {
 .disclaimer {
   opacity: .7;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 30px; }
 
 .resultsPage {
   background-color: #0000b5; }
