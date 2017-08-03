@@ -246,52 +246,53 @@ main button {
     display: none; }
   .resultsPage h1 {
     font-size: 1em; }
-    .resultsPage h1:after,
-    .resultsPage h1 .subtitle {
+    .resultsPage h1:after {
       display: none; }
+  .resultsPage h2.subtitle {
+    display: none; }
 
 #page-results {
-  padding-top: 100px;
+  margin: 0 auto;
   max-width: 700px;
-  text-align: center;
-  margin: 0 auto; }
+  padding-top: 100px;
+  text-align: center; }
   #page-results .currentIcon svg {
     width: 60px; }
   #page-results .heading-location {
-    font-weight: 900;
     font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 5px; }
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase; }
   #page-results .heading-date {
     font-size: 1em;
     font-weight: normal;
     letter-spacing: 1px; }
   #page-results table {
-    text-align: left;
-    margin: 20px auto; }
+    margin: 20px auto;
+    text-align: left; }
     #page-results table td {
+      background: rgba(250, 250, 250, 0.08);
       padding: 10px 20px;
-      position: relative;
-      background: rgba(250, 250, 250, 0.08); }
+      position: relative; }
       #page-results table td:first-of-type {
         font-weight: 900;
         text-align: right; }
 
 .quality--percent {
-  font-weight: 900;
   font-size: 10em;
-  text-shadow: -1px -1px 1px #666;
+  font-weight: 900;
+  letter-spacing: 1px;
   margin: 0;
   text-align: center;
-  letter-spacing: 1px; }
+  text-shadow: -1px -1px 1px #666; }
 
 .sun {
-  opacity: .8;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
+  left: 0;
+  opacity: .8;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: -1; }
   .sun.low10 {
     background: #362a3c;
