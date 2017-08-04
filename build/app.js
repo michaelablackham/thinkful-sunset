@@ -307,7 +307,7 @@ App.Results = (function($) {
   var DATE_TEMPLATE = '<h2 class="heading-date">@dow, @month @date</h2>';
   var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>';
   var EXTRA_INFO_TEMPLATE = '<table> <tbody>' +
-    '<tr><td>Sun Event</td><td>@sunEvent</td></tr>' +
+    '<tr><th colspan="2">@sunEvent</th></tr>' +
     '<tr><td>Quality</td><td>@qualityString</td></tr>' +
     '<tr><td>Time</td><td> @time</td></tr>' +
     '<tr><td>Temperature</td><td>@temp<sup>&deg;F</sup></td></tr>' +
