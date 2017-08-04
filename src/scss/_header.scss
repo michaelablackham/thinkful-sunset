@@ -34,6 +34,9 @@ header {
     margin-top: 0;
     padding: 5px 0;
     top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
 
     &:after {
       background: rgba(250, 250, 250, .2);
@@ -49,6 +52,13 @@ header {
     button {
       display: block;
     }
+  }
+
+  &#page-results {
+    margin: 0 auto;
+    max-width: 700px;
+    padding-top: 70px;
+    text-align: center;
   }
 
   h1 {

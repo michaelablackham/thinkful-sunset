@@ -2,6 +2,16 @@
   width: 60px;
 }
 
+.resultsPage {
+  section#page-results {
+    margin-top: 70px;
+
+    @media only screen and (min-width : 800px) {
+      margin-top: 120px;
+    }
+  }
+}
+
 .heading-location {
   font-size: 1.5em;
   font-weight: bold;
@@ -62,27 +72,25 @@ table {
   z-index: -1;
 
   &.low10,
-  &.low20 {
-    @include gradient(#2d3db5, #23459e, #1d74c7, #282269);
+  &.low20,
+  &.low30 {
+    @include gradient(#2959d6, #173686, #0c3c69, #060321);
   }
 
-  &.low30,
-  &.mid40 {
-    @include gradient(#b0d5f5, #84c2f3, #2872c7, #282269);
-  }
 
+  &.mid40,
   &.mid50,
-  &.mid60{
-    @include gradient(#fd9cb6, #e69494, #226869, #282269);
+  &.mid60 {
+    @include gradient(#b0d5f5, #84c2f3, #2872c7, #282269);
   }
 
   &.mid70,
   &.high80 {
-    @include gradient(#fbfbe0, #f1d16a, #982e63, #282269);
+    @include gradient(#f5f5aa, #f1ac6a, #b92f74, #282269);
   }
 
   &.high90,
   &.high100 {
-    @include gradient(#FCFD9C, #c6c761, #E64748, #282269);
+    @include gradient(#fdfdec, #e4ba04, #E64748, #282269);
   }
 }
