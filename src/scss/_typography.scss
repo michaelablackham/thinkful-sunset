@@ -14,7 +14,7 @@ h1 {
     content: "";
     height: 2px;
     width: 200px;
-    background:#fff;
+    background: $white;
     position: absolute;
     left: 50%;
     margin-left: -100px;
@@ -37,16 +37,7 @@ h2 {
 
   &.subtitle {
     font-size: .8em;
-    // text-shadow: 2px 2px 0px #666;
     letter-spacing: .1em;
     font-weight:normal;
   }
-}
-
-h3 {
-
-}
-
-p {
-
 }

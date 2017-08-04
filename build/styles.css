@@ -248,13 +248,14 @@ table {
     padding: 10px 20px;
     position: relative; }
     table td:first-of-type {
-      font-weight: 900;
-      text-align: right; }
+      font-weight: bold;
+      text-align: right;
+      letter-spacing: 1px; }
   table th {
     background: rgba(250, 250, 250, 0.12);
     font-size: 1.2em;
     letter-spacing: 6px;
-    padding: 10px 20px;
+    padding: 13px 20px;
     text-align: center;
     text-transform: uppercase; }
 
@@ -268,10 +269,10 @@ table {
   @media only screen and (min-width: 400px) {
     .quality--percent {
       font-size: 8em; } }
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 600px) {
     .quality--percent {
       font-size: 10em; } }
-  @media only screen and (min-width: 1400px) {
+  @media only screen and (min-width: 800px) {
     .quality--percent {
       font-size: 15em; } }
 
