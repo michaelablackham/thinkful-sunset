@@ -239,22 +239,10 @@ main button {
   text-align: center;
   width: 100%; }
 
-.resultsPage h1 {
-  font-size: 1em; }
-  .resultsPage h1:after {
-    display: none; }
-
-.resultsPage h2.subtitle {
-  display: none; }
-
-.resultsPage footer {
-  margin-top: 40px;
-  position: static; }
-
 #page-results {
   margin: 0 auto;
   max-width: 700px;
-  padding-top: 8%;
+  padding-top: 70px;
   text-align: center; }
   #page-results .currentIcon svg {
     width: 60px; }
@@ -389,7 +377,7 @@ main button {
 
 header {
   left: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 20%;
   transition-duration: .1s;
@@ -426,6 +414,14 @@ header {
   .resultsPage header button {
     display: block; }
 
+.resultsPage h1 {
+  font-size: 1em; }
+  .resultsPage h1:after {
+    display: none; }
+
+.resultsPage h2.subtitle {
+  display: none; }
+
 footer {
   bottom: 20px;
   color: #fff;
@@ -433,3 +429,10 @@ footer {
   position: fixed;
   right: 0;
   text-align: center; }
+
+.resultsPage footer {
+  margin-top: 40px;
+  position: static; }
+  @media only screen and (min-height: 600px) {
+    .resultsPage footer {
+      position: fixed; } }

@@ -1,6 +1,6 @@
 header {
   left: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 20%;
   transition-duration: .1s;
@@ -46,5 +46,17 @@ header {
     button {
       display: block;
     }
+  }
+
+  h1 {
+    font-size: 1em;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  h2.subtitle {
+    display: none;
   }
 }
