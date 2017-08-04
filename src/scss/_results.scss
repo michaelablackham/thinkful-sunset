@@ -21,24 +21,26 @@
 #page-results {
   margin: 0 auto;
   max-width: 700px;
-  padding-top: 50px;
+  padding-top: 8%;
   text-align: center;
 
   .currentIcon svg {
     width: 60px;
   }
 
-  .heading-date{
+  .heading-location {
     font-size: 1.5em;
-    font-weight: 900;
-    letter-spacing: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 0 7px;
     text-transform: uppercase;
   }
 
-  .heading-location {
+  .heading-date {
     font-size: 1em;
     font-weight: normal;
     letter-spacing: 1px;
+    margin: 0;
   }
 
   table {

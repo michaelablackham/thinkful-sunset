@@ -46,7 +46,7 @@ App.Results = (function($) {
 
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
+    $('#page-results').html(sunBackground + newLocation + newDate + newQuality + newQualityInfo);
   }
 
   function update() {
