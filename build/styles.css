@@ -62,12 +62,14 @@ body {
 section {
   z-index: 2; }
   section#page-home {
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 35%; }
+    text-align: center; }
+    @media only screen and (min-height: 600px) {
+      section#page-home {
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 35%; } }
 
 .flex {
   display: flex; }
@@ -239,42 +241,47 @@ main button {
   text-align: center;
   width: 100%; }
 
-#page-results {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-top: 70px;
-  text-align: center; }
-  #page-results .currentIcon svg {
-    width: 60px; }
-  #page-results .heading-location {
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 0 0 7px;
-    text-transform: uppercase; }
-  #page-results .heading-date {
-    font-size: 1em;
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin: 0; }
-  #page-results table {
-    margin: 20px auto;
-    text-align: left; }
-    #page-results table td {
-      background: rgba(250, 250, 250, 0.04);
-      padding: 10px 20px;
-      position: relative; }
-      #page-results table td:first-of-type {
-        font-weight: 900;
-        text-align: right; }
+.currentIcon svg {
+  width: 60px; }
+
+.heading-location {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 7px;
+  text-transform: uppercase; }
+
+.heading-date {
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 0;
+  opacity: .7; }
+
+table {
+  margin: 20px auto;
+  text-align: left; }
+  table td {
+    background: rgba(250, 250, 250, 0.04);
+    padding: 10px 20px;
+    position: relative; }
+    table td:first-of-type {
+      font-weight: 900;
+      text-align: right; }
 
 .quality--percent {
-  font-size: 10em;
+  font-size: 6em;
   font-weight: 900;
   letter-spacing: 1px;
   margin: 0;
   text-align: center;
   text-shadow: -1px -1px 1px #666; }
+  @media only screen and (min-width: 400px) {
+    .quality--percent {
+      font-size: 8em; } }
+  @media only screen and (min-width: 700px) {
+    .quality--percent {
+      font-size: 10em; } }
 
 .sun {
   height: 100%;
@@ -284,105 +291,62 @@ main button {
   top: 0;
   width: 100%;
   z-index: -1; }
-  .sun.low10 {
-    background: #362a3c;
+  .sun.low10, .sun.low20 {
+    background: #1d74c7;
     /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #2d3db5 0%, #23459e 10%, #362a3c 100%);
+    background: -moz-radial-gradient(100% 100%, ellipse cover, #2d3db5 0%, #23459e 5%, #1d74c7 50%, #282269 100%);
     /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #2d3db5 0%, #23459e 10%, #362a3c 100%);
+    background: -webkit-radial-gradient(100% 100%, ellipse cover, #2d3db5 0%, #23459e 5%, #1d74c7 50%, #282269 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #2d3db5 0%, #23459e 10%, #362a3c 100%);
+    background: radial-gradient(ellipse at 100% 100%, #2d3db5 0%, #23459e 10%, #1d74c7 50%, #282269 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.low20 {
-    background: #282269;
+  .sun.low30, .sun.mid40 {
+    background: #2872c7;
     /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #56a6b9 0%, #368dd2 10%, #282269 100%);
+    background: -moz-radial-gradient(100% 100%, ellipse cover, #b0d5f5 0%, #84c2f3 5%, #2872c7 50%, #282269 100%);
     /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #56a6b9 0%, #368dd2 10%, #282269 100%);
+    background: -webkit-radial-gradient(100% 100%, ellipse cover, #b0d5f5 0%, #84c2f3 5%, #2872c7 50%, #282269 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #56a6b9 0%, #368dd2 10%, #282269 100%);
+    background: radial-gradient(ellipse at 100% 100%, #b0d5f5 0%, #84c2f3 10%, #2872c7 50%, #282269 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.low30 {
-    background: #224369;
-    /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #19ecc6 0%, #23ffe6 10%, #224369 100%);
-    /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #19ecc6 0%, #23ffe6 10%, #224369 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #19ecc6 0%, #23ffe6 10%, #224369 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.mid40 {
+  .sun.mid50, .sun.mid60 {
     background: #226869;
     /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #fd9cb6 0%, #e69494 10%, #225769 100%);
+    background: -moz-radial-gradient(100% 100%, ellipse cover, #fd9cb6 0%, #e69494 5%, #226869 50%, #282269 100%);
     /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #fd9cb6 0%, #e69494 10%, #225769 100%);
+    background: -webkit-radial-gradient(100% 100%, ellipse cover, #fd9cb6 0%, #e69494 5%, #226869 50%, #282269 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #fd9cb6 0%, #e69494 10%, #225769 100%);
+    background: radial-gradient(ellipse at 100% 100%, #fd9cb6 0%, #e69494 10%, #226869 50%, #282269 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.mid50 {
-    background: #05b5a2;
+  .sun.mid70, .sun.high80 {
+    background: #982e63;
     /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #ea4f72 0%, #e074da 10%, #1b2b56 100%);
+    background: -moz-radial-gradient(100% 100%, ellipse cover, #fbfbe0 0%, #f1d16a 5%, #982e63 50%, #282269 100%);
     /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #ea4f72 0%, #e074da 10%, #1b2b56 100%);
+    background: -webkit-radial-gradient(100% 100%, ellipse cover, #fbfbe0 0%, #f1d16a 5%, #982e63 50%, #282269 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #ea4f72 0%, #e074da 10%, #1b2b56 100%);
+    background: radial-gradient(ellipse at 100% 100%, #fbfbe0 0%, #f1d16a 10%, #982e63 50%, #282269 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.mid60 {
-    background: #b5a505;
+  .sun.high90, .sun.high100 {
+    background: #E64748;
     /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #e696cd 0%, #ff8aad 10%, #272a50 100%);
+    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #c6c761 5%, #E64748 50%, #282269 100%);
     /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #e696cd 0%, #ff8aad 10%, #272a50 100%);
+    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #c6c761 5%, #E64748 50%, #282269 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #e696cd 0%, #ff8aad 10%, #272a50 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.mid70 {
-    background: #bba132;
-    /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ffdb06 10%, #dc6200 100%);
-    /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ffdb06 10%, #dc6200 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%, #ffdb06 10%, #dc6200 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.high80 {
-    background: #bb7a32;
-    /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ea2f34 10%, #bb7a32 100%);
-    /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ea2f34 10%, #bb7a32 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%, #ea2f34 10%, #bb7a32 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.high90 {
-    background: #a91c1c;
-    /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #e8ea2f 10%, #a91c1c 100%);
-    /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #e8ea2f 10%, #a91c1c 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%, #e8ea2f 10%, #a91c1c 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  .sun.high100 {
-    background: #af0259;
-    /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #fffe0d 10%, #af0259 100%);
-    /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #fffe0d 10%, #af0259 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%, #fffe0d 10%, #af0259 100%);
+    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%, #c6c761 10%, #E64748 50%, #282269 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
 
 header {
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 20%;
   transition-duration: .1s;
   transition-property: all;
   transition-timing-function: ease-in-out; }
+  @media only screen and (min-height: 600px) {
+    header {
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 20%; } }
   header button {
     background: transparent;
     border: 0;
@@ -423,16 +387,14 @@ header {
   display: none; }
 
 footer {
-  bottom: 20px;
   color: #fff;
-  left: 0;
-  position: fixed;
-  right: 0;
-  text-align: center; }
-
-.resultsPage footer {
+  text-align: center;
   margin-top: 40px;
   position: static; }
   @media only screen and (min-height: 600px) {
-    .resultsPage footer {
-      position: fixed; } }
+    footer {
+      bottom: 20px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      margin: 0; } }

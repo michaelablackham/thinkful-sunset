@@ -27,12 +27,15 @@ section {
   z-index: 2;
 
   &#page-home {
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
     text-align: center;
-    top: 35%;
+
+    @media only screen and (min-height : 600px) {
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 35%;
+    }
   }
 }
 

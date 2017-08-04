@@ -1,19 +1,14 @@
 footer {
-  bottom: 20px;
   color: $white;
-  left: 0;
-  position: fixed;
-  right: 0;
   text-align: center;
-}
+  margin-top: 40px;
+  position: static;
 
-.resultsPage {
-  footer {
-    margin-top: 40px;
-    position: static;
-
-    @media only screen and (min-height : 600px) {
-      position: fixed;
-    }
+  @media only screen and (min-height : 600px) {
+    bottom: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0;
   }
 }

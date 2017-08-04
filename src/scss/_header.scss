@@ -1,11 +1,14 @@
 header {
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 20%;
   transition-duration: .1s;
   transition-property: all;
   transition-timing-function: ease-in-out;
+
+  @media only screen and (min-height : 600px) {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 20%;
+  }
 
   button {
     background: transparent;

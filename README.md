@@ -11,8 +11,6 @@
   - [ ] have lat/long change to city, state
   - [ ] have location fill in input
 - [x] Pull in basic API info from backend
-- [ ] if current time is AFTER sunset --> default to sunrise
-- [ ] if current time is AFTER sunrise --> default to sunset
 - [ ] on results page, be able to switch to sunset/sunrise
 - [ ] be able to change location while on results page
 
@@ -21,5 +19,4 @@
 - [x] Sketch our wireframes
 - [ ] Make everything responsive (mobile first)
 - [ ] background color will be warmer the nicer the quality & cooler on lower quality
-
-only includes the lower 48*****
+- [x] add that this only works for the lower 48 

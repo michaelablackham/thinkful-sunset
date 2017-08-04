@@ -1,53 +1,55 @@
-#page-results {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-top: 70px;
-  text-align: center;
+.currentIcon svg {
+  width: 60px;
+}
 
-  .currentIcon svg {
-    width: 60px;
-  }
+.heading-location {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 7px;
+  text-transform: uppercase;
+}
 
-  .heading-location {
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 0 0 7px;
-    text-transform: uppercase;
-  }
+.heading-date {
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 0;
+  opacity: .7;
+}
 
-  .heading-date {
-    font-size: 1em;
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin: 0;
-  }
+table {
+  margin: 20px auto;
+  text-align: left;
 
-  table {
-    margin: 20px auto;
-    text-align: left;
+  td {
+    background: rgba(250, 250, 250, .04);
+    padding: 10px 20px;
+    position: relative;
 
-    td {
-      background: rgba(250, 250, 250, .04);
-      padding: 10px 20px;
-      position: relative;
-
-      &:first-of-type {
-        font-weight: 900;
-        text-align: right;
-      }
-
+    &:first-of-type {
+      font-weight: 900;
+      text-align: right;
     }
   }
 }
 
+
 .quality--percent {
-  font-size: 10em;
+  font-size: 6em;
   font-weight: 900;
   letter-spacing: 1px;
   margin: 0;
   text-align: center;
   text-shadow: -1px -1px 1px #666;
+
+  @media only screen and (min-width : 400px) {
+    font-size: 8em;
+  }
+
+  @media only screen and (min-width : 700px) {
+    font-size: 10em;
+  }
 }
 
 .sun {
@@ -59,64 +61,28 @@
   width: 100%;
   z-index: -1;
 
-  &.low10 {
-    background: #362a3c; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #2d3db5 0%, #23459e 10%, #362a3c 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #2d3db5 0%, #23459e 10%, #362a3c 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #2d3db5 0%,  #23459e 10%,  #362a3c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  }
+  &.low10,
   &.low20 {
-    background: #282269; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #56a6b9 0%, #368dd2 10%, #282269 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #56a6b9 0%, #368dd2 10%, #282269 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #56a6b9 0%,  #368dd2 10%,  #282269 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    @include gradient(#2d3db5, #23459e, #1d74c7, #282269);
   }
-  &.low30 {
-    background: #224369; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #19ecc6 0%, #23ffe6 10%, #224369 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #19ecc6 0%, #23ffe6 10%, #224369 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #19ecc6 0%,  #23ffe6 10%,  #224369 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  }
+
+  &.low30,
   &.mid40 {
-    background: #226869; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #fd9cb6 0%, #e69494 10%, #225769 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #fd9cb6 0%, #e69494 10%, #225769 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #fd9cb6 0%,  #e69494 10%,  #225769 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    @include gradient(#b0d5f5, #84c2f3, #2872c7, #282269);
   }
-  &.mid50 {
-    background: #05b5a2; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #ea4f72 0%, #e074da 10%, #1b2b56 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #ea4f72 0%, #e074da 10%, #1b2b56 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #ea4f72 0%,  #e074da 10%,  #1b2b56 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  }
+
+  &.mid50,
   &.mid60{
-    background: #b5a505; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #e696cd 0%, #ff8aad 10%, #272a50 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #e696cd 0%, #ff8aad 10%, #272a50 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #e696cd 0%,  #ff8aad 10%,  #272a50 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    @include gradient(#fd9cb6, #e69494, #226869, #282269);
   }
-  &.mid70 {
-    background: #bba132; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ffdb06 10%, #dc6200 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ffdb06 10%, #dc6200 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%,  #ffdb06 10%,  #dc6200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  }
+
+  &.mid70,
   &.high80 {
-    background: #bb7a32; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ea2f34 10%, #bb7a32 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #ea2f34 10%, #bb7a32 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%,  #ea2f34 10%,  #bb7a32 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    @include gradient(#fbfbe0, #f1d16a, #982e63, #282269);
   }
-  &.high90 {
-    background: #a91c1c; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #e8ea2f 10%, #a91c1c 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #e8ea2f 10%, #a91c1c 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%,  #e8ea2f 10%,  #a91c1c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  }
+
+  &.high90,
   &.high100 {
-    background: #af0259; /* Old browsers */
-    background: -moz-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #fffe0d 10%, #af0259 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(100% 100%, ellipse cover, #FCFD9C 0%, #fffe0d 10%, #af0259 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at 100% 100%, #FCFD9C 0%,  #fffe0d 10%,  #af0259 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    @include gradient(#FCFD9C, #c6c761, #E64748, #282269);
   }
 }
