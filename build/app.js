@@ -167,6 +167,7 @@ $(function() {
   App.State.addObserver(App.Results);
 
   App.EventListeners.useCurrent();
+  App.EventListeners.homeButton();
   App.State.get();
   App.Form.submit();
 });
@@ -183,13 +184,13 @@ App.EventListeners = (function($) {
   }
 
   function homeButton() {
-    $(".button-home").click(function(){
-      
+    $(".button-home").click(function() {
+      App.Reset.resetPage();
     });
   }
 
   return {
-    useCurrent: useCurrentLocation
+    useCurrent: useCurrentLocation,
     homeButton: homeButton
   }
 
@@ -271,6 +272,29 @@ App.Render = (function($) {
     setCurrentPage: setCurrentPage
   };
 
+})(jQuery);
+
+var App = App || {};
+
+App.Reset = (function ($) {
+  'use strict';
+
+  function resetPage (params) {
+    App.State.set({
+      sunType: "",
+      location: "",
+      forecast: null,
+      currentPage: 'pageHome'
+    });
+
+      $('body').removeClass('resultsPage');
+      $('#page-home').show();
+      $('#page-results').hide();
+  }
+
+  return {
+    resetPage: resetPage
+  }
 })(jQuery);
 
 var App = App || {};

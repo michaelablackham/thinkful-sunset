@@ -404,7 +404,8 @@ header {
     outline: 0;
     position: absolute;
     right: 20px;
-    top: 10px; }
+    top: 10px;
+    z-index: 2; }
     header button.button-home {
       left: 20px; }
 

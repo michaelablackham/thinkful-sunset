@@ -10,13 +10,13 @@ App.EventListeners = (function($) {
   }
 
   function homeButton() {
-    $(".button-home").click(function(){
-      
+    $(".button-home").click(function() {
+      App.Reset.resetPage();
     });
   }
 
   return {
-    useCurrent: useCurrentLocation
+    useCurrent: useCurrentLocation,
     homeButton: homeButton
   }
 

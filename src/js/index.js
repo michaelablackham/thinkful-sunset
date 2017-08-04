@@ -10,6 +10,7 @@ $(function() {
   App.State.addObserver(App.Results);
 
   App.EventListeners.useCurrent();
+  App.EventListeners.homeButton();
   App.State.get();
   App.Form.submit();
 });
