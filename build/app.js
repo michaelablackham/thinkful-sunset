@@ -182,8 +182,15 @@ App.EventListeners = (function($) {
     });
   }
 
+  function homeButton() {
+    $(".button-home").click(function(){
+      
+    });
+  }
+
   return {
     useCurrent: useCurrentLocation
+    homeButton: homeButton
   }
 
 })(jQuery);

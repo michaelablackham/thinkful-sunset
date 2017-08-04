@@ -17,6 +17,10 @@ header {
     position: absolute;
     right: 20px;
     top: 10px;
+
+    &.button-home {
+      left: 20px;
+    }
   }
 }
 

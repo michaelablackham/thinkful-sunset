@@ -405,6 +405,8 @@ header {
     position: absolute;
     right: 20px;
     top: 10px; }
+    header button.button-home {
+      left: 20px; }
 
 .resultsPage header {
   background-color: rgba(250, 250, 250, 0.1);
