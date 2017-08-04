@@ -99,34 +99,6 @@ main button {
   .loading-screen.active {
     display: flex; }
 
-.hero {
-  position: fixed;
-  z-index: -10; }
-  .hero .hero__mask {
-    position: fixed;
-    background: rgba(50, 25, 10, 0.5);
-    z-index: -99;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-  .hero .hero__video {
-    background: url(../src/images/Orange-Ripple.jpg);
-    background-size: cover;
-    position: center center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 110%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%); }
-
 .template-form {
   margin: 40px auto;
   max-width: 750px;
@@ -254,14 +226,14 @@ main button {
     .resultsPage section#page-results {
       margin-top: 120px; } }
 
-.heading-location {
+.heading-date {
   font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 2px;
   margin: 0 0 7px;
   text-transform: uppercase; }
 
-.heading-date {
+.heading-location {
   font-size: 1em;
   font-weight: normal;
   letter-spacing: 1px;
@@ -292,6 +264,9 @@ table {
   @media only screen and (min-width: 700px) {
     .quality--percent {
       font-size: 10em; } }
+  @media only screen and (min-width: 1400px) {
+    .quality--percent {
+      font-size: 15em; } }
 
 .sun {
   height: 100%;
@@ -381,12 +356,6 @@ header {
     width: 100%; }
   .resultsPage header button {
     display: block; }
-
-.resultsPage#page-results {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-top: 70px;
-  text-align: center; }
 
 .resultsPage h1 {
   font-size: 1em; }

@@ -12,7 +12,7 @@
   }
 }
 
-.heading-location {
+.heading-date {
   font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 2px;
@@ -20,7 +20,7 @@
   text-transform: uppercase;
 }
 
-.heading-date {
+.heading-location {
   font-size: 1em;
   font-weight: normal;
   letter-spacing: 1px;
@@ -59,6 +59,10 @@ table {
 
   @media only screen and (min-width : 700px) {
     font-size: 10em;
+  }
+
+  @media only screen and (min-width : 1400px) {
+    font-size: 15em;
   }
 }
 

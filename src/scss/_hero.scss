@@ -15,35 +15,3 @@
     display: flex;
   }
 }
-
-.hero {
-  position: fixed;
-  z-index: -10;
-
-  .hero__mask {
-    position: fixed;
-    background: rgba(50,25,10,.5);
-    z-index: -99;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .hero__video {
-    background: url(../src/images/Orange-Ripple.jpg);
-    background-size:cover;
-    position:center center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 110%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-  }
-}

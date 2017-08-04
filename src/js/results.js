@@ -4,7 +4,7 @@ App.Results = (function($) {
   'use strict';
 
   var SUNSET_TEMPLATE = '<span class="currentIcon">@sunEvent</span>';
-  var LOCATION_TEMPLATE = '<h2 class="heading-location">@location</h2>';
+  var LOCATION_TEMPLATE = '<h2 class="heading-location"><i class="fa fa-location-arrow" aria-hidden="true"></i> @location</h2>';
   var DATE_TEMPLATE = '<h2 class="heading-date">@dow, @month @date</h2>';
   var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>';
   var EXTRA_INFO_TEMPLATE = '<table> <tbody>' +
@@ -46,7 +46,7 @@ App.Results = (function($) {
 
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(sunBackground + newLocation + newDate + newQuality + newQualityInfo);
+    $('#page-results').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
   }
 
   function update() {
