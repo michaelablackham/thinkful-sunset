@@ -8,12 +8,12 @@
 ## Tasks for Code
 - [x] Set up state
 - [x] Get location from GPS
-  - [ ] have lat/long change to city, state
+  - [ ] have lat/long change to city, state @joelwallis
   - [ ] have location fill in input
 - [x] Pull in basic API info from backend
 - [ ] change location/sun event on results page-results
 - [x] go back to home and reset
-- [ ] get rid of milliseconds in the time on results page
+- [x] get rid of seconds in the time on results page
 
 
 ## Tasks for Design

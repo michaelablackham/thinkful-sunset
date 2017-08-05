@@ -26,6 +26,7 @@
   letter-spacing: 1px;
   margin: 0;
   opacity: .7;
+  text-transform: capitalize;
 }
 
 table {
@@ -88,23 +89,23 @@ table {
   &.low10,
   &.low20,
   &.low30 {
-    @include gradient(#2959d6, #173686, #0c3c69, #060321);
+    @include gradient($blue-40, $blue-50, $blue-60, $blue-90);
   }
 
 
   &.mid40,
   &.mid50,
   &.mid60 {
-    @include gradient(#b0d5f5, #84c2f3, #2872c7, #282269);
+    @include gradient($blue-10, $blue-20, $blue-30, $blue-80);
   }
 
   &.mid70,
   &.high80 {
-    @include gradient(#f5f5aa, #f1ac6a, #b92f74, #282269);
+    @include gradient($yellow-20, $yellow-70, $pink-60, $blue-80);
   }
 
   &.high90,
   &.high100 {
-    @include gradient(#fdfdec, #e4ba04, #E64748, #282269);
+    @include gradient($yellow-10, $yellow-40, $orange-80, $blue-80);
   }
 }

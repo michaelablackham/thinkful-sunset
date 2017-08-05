@@ -15,9 +15,16 @@ App.EventListeners = (function($) {
     });
   }
 
+  function toggleButton() {
+    $(".button-menu").click(function() {
+      App.ToggleForm.toggleMenu();
+    });
+  }
+
   return {
     useCurrent: useCurrentLocation,
-    homeButton: homeButton
+    homeButton: homeButton,
+    menuButton: toggleButton
   }
 
 })(jQuery);

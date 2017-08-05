@@ -5,7 +5,10 @@ App.ConvertTime = (function($) {
 
   function convertTime() {
     var state = App.State.get();
-    var recommendedTime = new Date(state.forecast.recommendedTime).toLocaleTimeString();
+    // var recommendedTime = new Date(state.forecast.recommendedTime).toLocaleTimeString();
+    var recommendedTime = new Date(state.forecast.recommendedTime)
+      .toLocaleTimeString()
+      .replace(/(\d+:\d+).+(AM|PM)/, '$1 $2');
     return recommendedTime;
   }
 

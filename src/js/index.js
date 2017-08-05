@@ -11,6 +11,7 @@ $(function() {
 
   App.EventListeners.useCurrent();
   App.EventListeners.homeButton();
+  App.EventListeners.menuButton();
   App.State.get();
   App.Form.submit();
 });

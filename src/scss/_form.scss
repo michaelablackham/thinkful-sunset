@@ -42,13 +42,13 @@
   }
 
   .location-wrapper {
-    border: 2px solid #bb4c82;
+    border: 2px solid $pink-50;
     border-radius: 40px;
     overflow: hidden;
     position: relative;
 
     .current-location {
-      background: #bb4c82;
+      background: $pink-50;
       bottom: 0;
       padding: 0 20px 0 15px;
       position: absolute;
@@ -58,8 +58,8 @@
   }
 
   .btn {
-    border-bottom: 2px solid #bb4c82;
-    border-top: 2px solid #bb4c82;
+    border-bottom: 2px solid $pink-50;
+    border-top: 2px solid $pink-50;
     box-sizing: border-box;
     color: $white;
     display: inline-block;
@@ -83,7 +83,7 @@
       min-width: 60px;
 
       &:after {
-        background: #bb4c82;
+        background: $pink-50;
         border-radius: 40px;
         content: "";
         height: 100%;
@@ -106,7 +106,7 @@
     }
 
     &.toggle-left + label {
-      border-left: 2px solid #bb4c82;
+      border-left: 2px solid $pink-50;
       border-radius: 40px 0 0 40px;
 
       &:after {
@@ -116,7 +116,7 @@
 
     &.toggle-right + label {
       border-radius: 0 40px 40px 0;
-      border-right: 2px solid #bb4c82;
+      border-right: 2px solid $pink-50;
       margin-left: -5px;
 
       &:after {
@@ -137,7 +137,7 @@
   }
 
   button[type="submit"] {
-    background: #bb4c82;
+    background: $pink-50;
     border: 0;
     border-radius: 40px;
     font-size: .8em;
@@ -147,7 +147,7 @@
     text-transform: uppercase;
 
     &:hover {
-      background: #bb4c82;
+      background: $pink-50;
     }
   }
 }

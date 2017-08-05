@@ -42,7 +42,10 @@ App.ConvertTime = (function($) {
 
   function convertTime() {
     var state = App.State.get();
-    var recommendedTime = new Date(state.forecast.recommendedTime).toLocaleTimeString();
+    // var recommendedTime = new Date(state.forecast.recommendedTime).toLocaleTimeString();
+    var recommendedTime = new Date(state.forecast.recommendedTime)
+      .toLocaleTimeString()
+      .replace(/(\d+:\d+).+(AM|PM)/, '$1 $2');
     return recommendedTime;
   }
 
@@ -168,6 +171,7 @@ $(function() {
 
   App.EventListeners.useCurrent();
   App.EventListeners.homeButton();
+  App.EventListeners.menuButton();
   App.State.get();
   App.Form.submit();
 });
@@ -189,9 +193,16 @@ App.EventListeners = (function($) {
     });
   }
 
+  function toggleButton() {
+    $(".button-menu").click(function() {
+      App.ToggleForm.toggleMenu();
+    });
+  }
+
   return {
     useCurrent: useCurrentLocation,
-    homeButton: homeButton
+    homeButton: homeButton,
+    menuButton: toggleButton
   }
 
 })(jQuery);
@@ -410,6 +421,27 @@ App.ConvertTemp = (function($) {
 
   return {
     fahrenheit: celsiusToFahrenheit
+  }
+
+})(jQuery);
+
+var App = App || {};
+
+App.ToggleForm = (function($) {
+  'use strict';
+
+  function cloneForm() {
+    $('#page-home .template-form').clone();
+  }
+
+  function toggleForm() {
+    console.log("toggling form");
+  }
+
+
+  return {
+    cloneForm: cloneForm,
+    toggleMenu: toggleForm
   }
 
 })(jQuery);

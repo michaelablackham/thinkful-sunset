@@ -12,9 +12,9 @@ body {
 
 .background-color {
   background: #362a3c; /* Old browsers */
-  background: -moz-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at 100% 100%, #0a0f33 0%,  #1b3065 10%,  #6f2e5b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-radial-gradient(100% 100%, ellipse cover, $blue-90 0%, $blue-70 10%, $pink-80 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(100% 100%, ellipse cover, $blue-90 0%, $blue-70 10%, $pink-80 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at 100% 100%, $blue-90 0%,  $blue-70 10%,  $pink-80 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   bottom: 0;
   left: 0;
   position: absolute;

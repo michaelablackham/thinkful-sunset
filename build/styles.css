@@ -46,11 +46,11 @@ body {
 .background-color {
   background: #362a3c;
   /* Old browsers */
-  background: -moz-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%);
+  background: -moz-radial-gradient(100% 100%, ellipse cover, #060321 0%, #1b3065 10%, #6f2e5b 100%);
   /* FF3.6-15 */
-  background: -webkit-radial-gradient(100% 100%, ellipse cover, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%);
+  background: -webkit-radial-gradient(100% 100%, ellipse cover, #060321 0%, #1b3065 10%, #6f2e5b 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at 100% 100%, #0a0f33 0%, #1b3065 10%, #6f2e5b 100%);
+  background: radial-gradient(ellipse at 100% 100%, #060321 0%, #1b3065 10%, #6f2e5b 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   bottom: 0;
   left: 0;
@@ -238,7 +238,8 @@ main button {
   font-weight: normal;
   letter-spacing: 1px;
   margin: 0;
-  opacity: .7; }
+  opacity: .7;
+  text-transform: capitalize; }
 
 table {
   margin: 20px auto;
