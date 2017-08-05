@@ -380,6 +380,7 @@ App.Reset = (function ($) {
 
     App.Render.setCurrentPage('pageHome');
     App.Render.renderSunEvent();
+    $('.sunset-location').val("");
   }
 
   return {
@@ -443,7 +444,13 @@ App.Results = (function($) {
   }
 
   function renderResults() {
-    $('body').addClass('resultsPage');
+    if ($('body').hasClass('resultsPage')){
+      $('#page-results').html("");
+      return;
+    }
+    else {
+      $('body').addClass('resultsPage');
+    }
     updateTemplates();
     App.EventListeners.loadingScreen();
   }

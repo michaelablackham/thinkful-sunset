@@ -13,6 +13,7 @@ App.Reset = (function ($) {
 
     App.Render.setCurrentPage('pageHome');
     App.Render.renderSunEvent();
+    $('.sunset-location').val("");
   }
 
   return {
