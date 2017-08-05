@@ -4,12 +4,12 @@ App.Form = (function($) {
   'use strict';
 
   function submitForm() {
-    $('form[name="location"]').submit(function (ev) {
+    $('form[name="location"], form[name="locationToggle"]').submit(function (ev) {
       ev.preventDefault();
 
+      App.EventListeners.loadingScreen();
       var locationVal = $('.sunset-location').val();
       var sunVal = $('.sun-event:checked').val();
-      $('.loading-screen').addClass("active");
 
       App.Prediction.get({
         type: sunVal,
@@ -27,6 +27,12 @@ App.Form = (function($) {
           }
         })
       })
+      .then(function(){
+        App.Render.setCurrentPage('pageResults');
+      })
+      .then(function(){
+        App.Render.renderSunEvent();
+      });
     });
   }
 

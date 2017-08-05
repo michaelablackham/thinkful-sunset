@@ -42,13 +42,11 @@
   }
 
   .location-wrapper {
-    border: 2px solid $pink-50;
     border-radius: 40px;
     overflow: hidden;
     position: relative;
 
     .current-location {
-      background: $pink-50;
       bottom: 0;
       padding: 0 20px 0 15px;
       position: absolute;
@@ -57,9 +55,21 @@
     }
   }
 
+  .location-wrapper,
+  .btn,
+  input[type="radio"].toggle + label {
+    border: 2px solid $pink-50;
+  }
+
+  .location-wrapper .current-location,
+  input[type="radio"].toggle + label:after,
+  button[type="submit"]{
+    background: $pink-50;
+  }
+
   .btn {
-    border-bottom: 2px solid $pink-50;
-    border-top: 2px solid $pink-50;
+    border-left: 0;
+    border-right: 0;
     box-sizing: border-box;
     color: $white;
     display: inline-block;
@@ -83,7 +93,6 @@
       min-width: 60px;
 
       &:after {
-        background: $pink-50;
         border-radius: 40px;
         content: "";
         height: 100%;
@@ -93,20 +102,10 @@
         width: 100%;
         z-index: -1;
       }
-
-      &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: -1;
-      }
     }
 
     &.toggle-left + label {
-      border-left: 2px solid $pink-50;
+      border-right: 0;
       border-radius: 40px 0 0 40px;
 
       &:after {
@@ -116,7 +115,7 @@
 
     &.toggle-right + label {
       border-radius: 0 40px 40px 0;
-      border-right: 2px solid $pink-50;
+      border-left: 0;
       margin-left: -5px;
 
       &:after {
@@ -137,7 +136,6 @@
   }
 
   button[type="submit"] {
-    background: $pink-50;
     border: 0;
     border-radius: 40px;
     font-size: .8em;
@@ -145,10 +143,6 @@
     outline: none;
     padding: 15px 30px;
     text-transform: uppercase;
-
-    &:hover {
-      background: $pink-50;
-    }
   }
 }
 

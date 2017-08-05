@@ -15,7 +15,7 @@ App.Results = (function($) {
     '</tbody> </table>';
   var SUN_BACKGROUND = '<span class="sun @color-class"></span>';
 
-  function renderResults() {
+  function updateTemplates() {
     var state = App.State.get();
 
     if (!state.forecast) {
@@ -28,11 +28,6 @@ App.Results = (function($) {
         .replace('@sunEvent', state.sunType);
       return sunIcon;
     }
-
-    $('.loading-screen').removeClass('active');
-    $('body').addClass('resultsPage');
-    $('#page-home').hide();
-    $('#page-results').show();
 
     var newLocation = LOCATION_TEMPLATE
       .replace('@location', state.location);
@@ -55,15 +50,18 @@ App.Results = (function($) {
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
     $('#page-results').html(App.ToggleForm.cloneMenu() + sunBackground + newDate + newLocation + newQuality + newQualityInfo);
+
   }
 
-  function update() {
-    renderResults();
+  function renderResults() {
+    $('body').addClass('resultsPage');
+    updateTemplates();
+    App.EventListeners.loadingScreen();
   }
 
   return {
-    render: renderResults,
-    update: update
+    update: updateTemplates,
+    render: renderResults
   }
 
 })(jQuery);

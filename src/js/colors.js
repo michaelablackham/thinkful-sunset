@@ -17,6 +17,7 @@ App.Colors = (function($) {
   ];
 
   function renderColor() {
+    //render background-gradient of results page based on quality percent
     var state = App.State.get();
     var qualityPercent = state.forecast.qualityPercent;
     var colorWarmth = Math.round(qualityPercent/10) - 1;

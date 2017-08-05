@@ -19,29 +19,37 @@ App.Render = (function($) {
       SECTION_ELEMENTS[currentPage].hide();
     });
 
-    // SHOW THE CURRENT PAGE
     SECTION_ELEMENTS[state.currentPage].show();
 
     //SWITCH TO SHOW THE NEW PAGE and run that pages' function
     switch (state.currentPage) {
       case 'pageHome':
-        App.Start.renderStartPage(state, SECTION_ELEMENTS[state.currentPage]);
+        App.HomePage.render(state, SECTION_ELEMENTS[state.currentPage]);
+        break;
+      case 'pageResults':
+        App.Results.render(state, SECTION_ELEMENTS[state.currentPage]);
         break;
       default:
         throw new Error('Unexpected page.');
     }
+    console.log(state)
+  }
+
+  function renderCurrentPage() {
+    SECTION_ELEMENTS[state.currentPage].show();
   }
 
   $(function () {
     Object.assign(SECTION_ELEMENTS, {
-      pageHome: $('#page-home')
-
+      pageHome: $('#page-home'),
+      pageResults: $('#page-results')
     });
   });
 
   return {
-    renderSunevent: renderSunevent,
-    setCurrentPage: setCurrentPage
+    renderSunEvent: renderSunevent,
+    setCurrentPage: setCurrentPage,
+    renderCurrentPage: renderCurrentPage
   };
 
 })(jQuery);

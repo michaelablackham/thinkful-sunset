@@ -95,7 +95,7 @@ main button {
   right: 0;
   text-align: center;
   top: 0;
-  z-index: 99; }
+  z-index: 999; }
   .loading-screen.active {
     display: flex; }
 
@@ -131,20 +131,26 @@ main button {
       color: #fff;
       opacity: .6; }
   .template-form__location .location-wrapper {
-    border: 2px solid #bb4c82;
     border-radius: 40px;
     overflow: hidden;
     position: relative; }
     .template-form__location .location-wrapper .current-location {
-      background: #bb4c82;
       bottom: 0;
       padding: 0 20px 0 15px;
       position: absolute;
       right: 0;
       top: 0; }
+  .template-form__location .location-wrapper,
+  .template-form__location .btn,
+  .template-form__location input[type="radio"].toggle + label {
+    border: 2px solid #bb4c82; }
+  .template-form__location .location-wrapper .current-location,
+  .template-form__location input[type="radio"].toggle + label:after,
+  .template-form__location button[type="submit"] {
+    background: #bb4c82; }
   .template-form__location .btn {
-    border-bottom: 2px solid #bb4c82;
-    border-top: 2px solid #bb4c82;
+    border-left: 0;
+    border-right: 0;
     box-sizing: border-box;
     color: #fff;
     display: inline-block;
@@ -164,7 +170,6 @@ main button {
       cursor: pointer;
       min-width: 60px; }
       .template-form__location input[type="radio"].toggle + label:after {
-        background: #bb4c82;
         border-radius: 40px;
         content: "";
         height: 100%;
@@ -173,22 +178,14 @@ main button {
         transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
         width: 100%;
         z-index: -1; }
-      .template-form__location input[type="radio"].toggle + label:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: -1; }
     .template-form__location input[type="radio"].toggle.toggle-left + label {
-      border-left: 2px solid #bb4c82;
+      border-right: 0;
       border-radius: 40px 0 0 40px; }
       .template-form__location input[type="radio"].toggle.toggle-left + label:after {
         left: 100%; }
     .template-form__location input[type="radio"].toggle.toggle-right + label {
       border-radius: 0 40px 40px 0;
-      border-right: 2px solid #bb4c82;
+      border-left: 0;
       margin-left: -5px; }
       .template-form__location input[type="radio"].toggle.toggle-right + label:after {
         left: -100%; }
@@ -200,7 +197,6 @@ main button {
       .template-form__location input[type="radio"].toggle:checked + label:after {
         left: 0; }
   .template-form__location button[type="submit"] {
-    background: #bb4c82;
     border: 0;
     border-radius: 40px;
     font-size: .8em;
@@ -208,8 +204,6 @@ main button {
     outline: none;
     padding: 15px 30px;
     text-transform: uppercase; }
-    .template-form__location button[type="submit"]:hover {
-      background: #bb4c82; }
 
 .disclaimer {
   margin-bottom: 30px;
@@ -349,6 +343,14 @@ table {
   z-index: 99; }
   .resultsPage--toggle-form.active {
     right: 0; }
+  .resultsPage--toggle-form .location-wrapper,
+  .resultsPage--toggle-form .btn,
+  .resultsPage--toggle-form input[type="radio"].toggle + label {
+    border: 2px solid #35539a; }
+  .resultsPage--toggle-form .location-wrapper .current-location,
+  .resultsPage--toggle-form input[type="radio"].toggle + label:after,
+  .resultsPage--toggle-form button[type="submit"] {
+    background: #35539a; }
 
 header {
   transition-duration: .1s;

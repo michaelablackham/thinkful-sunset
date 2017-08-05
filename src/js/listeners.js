@@ -17,14 +17,30 @@ App.EventListeners = (function($) {
 
   function toggleButton() {
     $(".button-menu").click(function() {
-      App.ToggleForm.toggleMenu();
+      toggleForm();
     });
+  }
+
+  function toggleForm() {
+    $('.resultsPage--toggle-form').toggleClass('active');
+    $('.button-menu').toggleClass('active');
+  }
+
+  function loadingScreen() {
+    if ($('.loading-screen').hasClass('active')) {
+      $('.loading-screen').removeClass("active");
+    }
+    else {
+      $('.loading-screen').addClass("active");
+    }
   }
 
   return {
     useCurrent: useCurrentLocation,
     homeButton: homeButton,
-    menuButton: toggleButton
+    menuButton: toggleButton,
+    toggleMenu: toggleForm,
+    loadingScreen: loadingScreen
   }
 
 })(jQuery);

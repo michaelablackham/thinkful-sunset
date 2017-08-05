@@ -11,9 +11,8 @@ App.Reset = (function ($) {
       currentPage: 'pageHome'
     });
 
-      $('body').removeClass('resultsPage');
-      $('#page-home').show();
-      $('#page-results').hide();
+    App.Render.setCurrentPage('pageHome');
+    App.Render.renderSunEvent();
   }
 
   return {

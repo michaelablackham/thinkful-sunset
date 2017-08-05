@@ -20,4 +20,16 @@
   &.active {
     right: 0;
   }
+
+  .location-wrapper,
+  .btn,
+  input[type="radio"].toggle + label {
+    border: 2px solid $blue-55;
+  }
+
+  .location-wrapper .current-location,
+  input[type="radio"].toggle + label:after,
+  button[type="submit"]{
+    background: $blue-55;
+  }
 }

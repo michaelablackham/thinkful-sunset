@@ -9,9 +9,9 @@ $(function() {
 
   App.State.addObserver(App.Results);
 
-  App.EventListeners.useCurrent();
   App.EventListeners.homeButton();
   App.EventListeners.menuButton();
+  App.EventListeners.useCurrent();
   App.State.get();
   App.Form.submit();
 });

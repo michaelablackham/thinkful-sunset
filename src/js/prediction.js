@@ -10,6 +10,7 @@ App.Prediction = (function ($) {
       type: params.type
     }
 
+    //Only use if coordinates are used instead of input for city st
     params.coords
       ? queryParams.coords = param.coords
       : queryParams.address = params.address
