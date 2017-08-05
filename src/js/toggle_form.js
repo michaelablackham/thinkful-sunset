@@ -15,6 +15,7 @@ App.ToggleForm = (function($) {
 
   function toggleForm() {
     $('.resultsPage--toggle-form').toggleClass('active');
+    $('.button-menu').toggleClass('active');
   }
 
 

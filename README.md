@@ -14,6 +14,7 @@
 - [ ] change location/sun event on results page-results
 - [x] go back to home and reset
 - [x] get rid of seconds in the time on results page
+- [x] fix location of home button on safari
 
 
 ## Tasks for Design
