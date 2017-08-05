@@ -356,7 +356,7 @@ App.Results = (function($) {
 
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
+    $('#page-results').html(App.ToggleForm.cloneMenu() + sunBackground + newDate + newLocation + newQuality + newQualityInfo);
   }
 
   function update() {
@@ -431,17 +431,23 @@ App.ToggleForm = (function($) {
   'use strict';
 
   function cloneForm() {
-    $('#page-home .template-form').clone();
+    var TOGGLE_FORM_TEMPLATE = '<div class="resultsPage--toggle-form template-form">@newform</div>'
+    var newForm = $('#page-home .template-form').clone().html();
+
+    var newFormTemplate = TOGGLE_FORM_TEMPLATE
+      .replace('@newform', newForm);
+
+    return newFormTemplate;
   }
 
   function toggleForm() {
-    console.log("toggling form");
+    $('.resultsPage--toggle-form').toggleClass('active');
   }
 
 
   return {
-    cloneForm: cloneForm,
-    toggleMenu: toggleForm
+    toggleMenu: toggleForm,
+    cloneMenu: cloneForm
   }
 
 })(jQuery);

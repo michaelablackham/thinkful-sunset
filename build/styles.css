@@ -44,7 +44,7 @@ body {
   padding: 20px; }
 
 .background-color {
-  background: #362a3c;
+  background: #37374a;
   /* Old browsers */
   background: -moz-radial-gradient(100% 100%, ellipse cover, #060321 0%, #1b3065 10%, #6f2e5b 100%);
   /* FF3.6-15 */
@@ -322,10 +322,31 @@ table {
     background: radial-gradient(ellipse at 100% 100%, #fdfdec 0%, #e4ba04 10%, #E64748 50%, #282269 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
 
+.resultsPage--toggle-form {
+  background: #060321;
+  bottom: 0;
+  left: auto;
+  margin: 0;
+  max-width: 300px;
+  overflow: hidden;
+  padding: 70px 40px;
+  padding: 70px 40px;
+  position: fixed;
+  right: -600px;
+  top: 0;
+  transition-duration: .2s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  z-index: 99; }
+  .resultsPage--toggle-form.active {
+    right: 0; }
+
 header {
   transition-duration: .1s;
   transition-property: all;
-  transition-timing-function: ease-in-out; }
+  transition-timing-function: ease-in-out;
+  z-index: 100; }
   @media only screen and (min-height: 600px) {
     header {
       left: 0;

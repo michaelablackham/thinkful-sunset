@@ -1,0 +1,22 @@
+.resultsPage--toggle-form {
+  background: $blue-90;
+  bottom: 0;
+  left: auto;
+  margin: 0;
+  max-width: 300px;
+  overflow: hidden;
+  padding: 70px 40px;
+  padding: 70px 40px;
+  position: fixed;
+  right: -600px;
+  top: 0;
+  transition-duration: .2s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  z-index: 99;
+
+  &.active {
+    right: 0;
+  }
+}
