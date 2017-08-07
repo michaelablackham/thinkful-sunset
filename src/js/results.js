@@ -12,7 +12,8 @@ App.Results = (function($) {
     '<tr><td>Quality</td><td>@qualityString</td></tr>' +
     '<tr><td>Time</td><td> @time</td></tr>' +
     '<tr><td>Temperature</td><td>@temp<sup>&deg;F</sup></td></tr>' +
-    '</tbody> </table>';
+    '</tbody> </table>' +
+    '<p class="disclaimer">*A higher percentage relates to a more vibrant @sunEvent.</p>';
   var SUN_BACKGROUND = '<span class="sun @color-class"></span>';
 
   function updateTemplates() {
@@ -22,11 +23,12 @@ App.Results = (function($) {
       return;
     }
 
+    var suneventIcon = state.sunType.toLowerCase();
+
     function sunIcon() {
-      var sunIcon = state.sunType.toLowerCase();
       var sunIcon = SUNSET_TEMPLATE
-        .replace('@sunEvent', sunIcon)
-        .replace('@sunEvent', sunIcon);
+        .replace('@sunEvent', suneventIcon)
+        .replace('@sunEvent', suneventIcon);
       return sunIcon;
     }
 
@@ -46,7 +48,8 @@ App.Results = (function($) {
       .replace('@sunEvent', state.sunType)
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@qualityString', state.forecast.qualityString)
-      .replace('@time', App.ConvertTime.recommendedTime());
+      .replace('@time', App.ConvertTime.recommendedTime())
+      .replace('@sunEvent', suneventIcon);
 
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
