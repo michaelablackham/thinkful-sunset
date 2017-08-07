@@ -4,13 +4,13 @@ App.Form = (function($) {
   'use strict';
 
   function submitForm() {
-    $('form[name="location"]').submit(function (ev) {
+    $('form[name="location"], form[name="locationToggle"]').submit(function (ev) {
       ev.preventDefault();
 
       //Get Values of all inputs
-      var locationVal = $('.sunset-location').val();
-      var coordsVal = $('.sunset-coords').val();
-      var sunVal = $('.sun-event:checked').val();
+      var locationVal = $(ev.target).parent().find('.sunset-location').val();
+      var coordsVal = $(ev.target).parent().find('.sunset-coords').val();
+      var sunVal = $(ev.target).parent().find('.sun-event:checked').val();
       //Set the loading screen text and fire loading screen
       App.State.set({loadingText: 'Getting ' + sunVal + ' Prediction'});
       App.EventListeners.loadingScreen();
@@ -36,7 +36,10 @@ App.Form = (function($) {
       })
       //When successful, send state to results page
       .then(function() {
-        App.Render.setCurrentPage('pageResults');
+        var state = App.State.get();
+        if (state.currentPage === 'pageHome') {
+          App.Render.setCurrentPage('pageResults');
+        }
       })
       //Render results page
       .then(function() {

@@ -64,19 +64,16 @@ App.Results = (function($) {
 
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(App.ToggleForm.cloneMenu() + sunBackground + newDate + newLocation + newQuality + newQualityInfo);
+    $('#page-results .page-results--content').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
   }
 
   function renderResults() {
-    if ($('body').hasClass('resultsPage')){
-      $('#page-results').html("");
-      return;
-    }
-    else {
+    if (!$('body').hasClass('resultsPage')){
       $('body').addClass('resultsPage');
     }
-    updateTemplates();
     App.EventListeners.loadingScreen();
+    updateTemplates();
+    $('input[type="text"]').val("");
   }
 
   return {

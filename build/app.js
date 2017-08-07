@@ -99,13 +99,13 @@ App.Form = (function($) {
   'use strict';
 
   function submitForm() {
-    $('form[name="location"]').submit(function (ev) {
+    $('form[name="location"], form[name="locationToggle"]').submit(function (ev) {
       ev.preventDefault();
 
       //Get Values of all inputs
-      var locationVal = $('.sunset-location').val();
-      var coordsVal = $('.sunset-coords').val();
-      var sunVal = $('.sun-event:checked').val();
+      var locationVal = $(ev.target).parent().find('.sunset-location').val();
+      var coordsVal = $(ev.target).parent().find('.sunset-coords').val();
+      var sunVal = $(ev.target).parent().find('.sun-event:checked').val();
       //Set the loading screen text and fire loading screen
       App.State.set({loadingText: 'Getting ' + sunVal + ' Prediction'});
       App.EventListeners.loadingScreen();
@@ -131,7 +131,10 @@ App.Form = (function($) {
       })
       //When successful, send state to results page
       .then(function() {
-        App.Render.setCurrentPage('pageResults');
+        var state = App.State.get();
+        if (state.currentPage === 'pageHome') {
+          App.Render.setCurrentPage('pageResults');
+        }
       })
       //Render results page
       .then(function() {
@@ -469,19 +472,16 @@ App.Results = (function($) {
 
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
-    $('#page-results').html(App.ToggleForm.cloneMenu() + sunBackground + newDate + newLocation + newQuality + newQualityInfo);
+    $('#page-results .page-results--content').html(sunBackground + newDate + newLocation + newQuality + newQualityInfo);
   }
 
   function renderResults() {
-    if ($('body').hasClass('resultsPage')){
-      $('#page-results').html("");
-      return;
-    }
-    else {
+    if (!$('body').hasClass('resultsPage')){
       $('body').addClass('resultsPage');
     }
-    updateTemplates();
     App.EventListeners.loadingScreen();
+    updateTemplates();
+    $('input[type="text"]').val("");
   }
 
   return {
@@ -554,31 +554,31 @@ var App = App || {};
 App.ToggleForm = (function($) {
   'use strict';
 
-  function cloneForm() {
-    var TOGGLE_FORM_TEMPLATE = '<div class="resultsPage--toggle-form template-form">'+
-    '<form class="template-form__location flex" name="locationToggle">'+
-      '<fieldset class="location flex">'+
-        '<label for="location">Location *</label>'+
-        '<div class="location-wrapper">'+
-          '<input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>'+
-          '<button class="current-location" title="get current location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>'+
-        '</div>'+
-      '</fieldset>'+
-      '<fieldset class="sunevent">'+
-        '<legend>Choose to see results for sunset or sunrise</legend>'+
-        '<input id="sunset2" type="radio" name="sunEvent" value="sunset" class="sun-event toggle toggle-left" checked>'+
-        '<label for="sunset2" class="active btn">Sunset</label>'+
-        '<input id="sunrise2" type="radio" name="sunEvent" value="sunrise" class="sun-event toggle toggle-right">'+
-        '<label for="sunrise2" class="btn">Sunrise</label>'+
-      '</fieldset>'+
-      '<p class="disclaimer"><em>* Currently only valid for the US. Not including <strong>Alaska</strong> or <strong>Hawaii</strong></em></p>'+
-      '<button title="Get Prediction" type="submit" name="submit" class="submit">Get Prediction</button>'+
-    '</form>'+
-    '</div>';
-
-
-    return TOGGLE_FORM_TEMPLATE;
-  }
+  // function cloneForm() {
+  //   var TOGGLE_FORM_TEMPLATE = '<div class="resultsPage--toggle-form template-form">'+
+  //   '<form class="template-form__location flex" name="locationToggle">'+
+  //     '<fieldset class="location flex">'+
+  //       '<label for="location">Location *</label>'+
+  //       '<div class="location-wrapper">'+
+  //         '<input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>'+
+  //         '<button class="current-location" title="get current location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>'+
+  //       '</div>'+
+  //     '</fieldset>'+
+  //     '<fieldset class="sunevent">'+
+  //       '<legend>Choose to see results for sunset or sunrise</legend>'+
+  //       '<input id="sunset2" type="radio" name="sunEvent" value="sunset" class="sun-event toggle toggle-left" checked>'+
+  //       '<label for="sunset2" class="active btn">Sunset</label>'+
+  //       '<input id="sunrise2" type="radio" name="sunEvent" value="sunrise" class="sun-event toggle toggle-right">'+
+  //       '<label for="sunrise2" class="btn">Sunrise</label>'+
+  //     '</fieldset>'+
+  //     '<p class="disclaimer"><em>* Currently only valid for the US. Not including <strong>Alaska</strong> or <strong>Hawaii</strong></em></p>'+
+  //     '<button title="Get Prediction" type="submit" name="submit" class="submit">Get Prediction</button>'+
+  //   '</form>'+
+  //   '</div>';
+  //
+  //
+  //   return TOGGLE_FORM_TEMPLATE;
+  // }
 
 
 
