@@ -32,7 +32,6 @@ App.Render = (function($) {
       default:
         throw new Error('Unexpected page.');
     }
-    console.log(state)
   }
 
   function renderCurrentPage() {

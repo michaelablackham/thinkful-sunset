@@ -22,8 +22,6 @@ App.Geolocation = (function ($) {
   function geolocationAvailable() {
     if ("geolocation" in navigator) {
       $('.location-wrapper').addClass('coordinates');
-    } else {
-      console.log("no location")
     }
   }
 
