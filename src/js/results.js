@@ -23,9 +23,10 @@ App.Results = (function($) {
     }
 
     function sunIcon() {
+      var sunIcon = state.sunType.toLowerCase();
       var sunIcon = SUNSET_TEMPLATE
-        .replace('@sunEvent', state.sunType)
-        .replace('@sunEvent', state.sunType);
+        .replace('@sunEvent', sunIcon)
+        .replace('@sunEvent', sunIcon);
       return sunIcon;
     }
 
