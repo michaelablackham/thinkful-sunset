@@ -44,7 +44,7 @@ App.Form = (function($) {
       //Render results page
       .then(function() {
         App.Render.renderSunEvent();
-        $('.resultsPage--toggle-form').removeClass('active');
+        $('.resultsPage--toggle-form, .button-menu').removeClass('active');
       })
       //Catch for any errors
       .catch(function() {
