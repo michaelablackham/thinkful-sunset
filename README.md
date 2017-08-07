@@ -1,15 +1,19 @@
 # TwilightFire
 
 ## Table of Contents
- - [Introduction](#Introduction)
- - [Features](#Features)
- - [Tasks](#Tasks)
+ - [Introduction](#introduction)
+ - [Features](#features)
+ - [Tasks](#tasks)
 
 
 ## Introduction
 TwilightFire is an app based off of [SunsetWX](https://sunsetwx.com/)that predicts the vibrance of the next sunset or sunrise by using the user's current location or by filling in the city, ST.
 The higher the percentage the more vibrant the sun event will be.
 This is especially helpful for photographers or even runner who want to catch the natural beauty of the sky.
+
+![Walkthrough](src/screenshots/home.png)
+![Walkthrough](src/screenshots/loading.png)
+![Walkthrough](src/screenshots/results.png)
 
 ### Features
   - HTML
@@ -18,6 +22,7 @@ This is especially helpful for photographers or even runner who want to catch th
   - Npm
   - gulp
   - Sass
+  - API
 
 ## API
 See [API](https://sunburst.sunsetwx.com/v1/docs/).
