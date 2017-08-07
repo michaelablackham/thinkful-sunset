@@ -14,7 +14,7 @@ App.EventListeners = (function($) {
 
   function clearForm() {
     $('.clear').click(function(ev){
-      $('#location').attr('required');
+      $('#location').attr('required', true);
       $('input[type="text"]').val("");
     });
   }

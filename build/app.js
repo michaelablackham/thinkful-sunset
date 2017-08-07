@@ -158,15 +158,19 @@ App.Geolocation = (function ($) {
 
   function getLocation (params) {
     App.EventListeners.loadingScreen();
-    navigator.geolocation.getCurrentPosition(function(position) {
-      App.EventListeners.loadingScreen();
-      $('.sunset-location').val('Current Location');
-      $('.sunset-coords').val(position.coords.longitude + ',' + position.coords.latitude);
-    });
-
-    // if ()
-
+    navigator.geolocation.getCurrentPosition(success, error);
   }
+
+  function success(pos) {
+    var pos = pos.coords;
+    App.EventListeners.loadingScreen();
+    $('.sunset-location').val('Current Location');
+    $('.sunset-coords').val(pos.longitude + ',' + pos.latitude);
+  };
+
+  function error(err) {
+    App.EventListeners.loadingScreen();
+  };
 
   function geolocationAvailable() {
     if ("geolocation" in navigator) {
@@ -246,7 +250,7 @@ App.EventListeners = (function($) {
 
   function clearForm() {
     $('.clear').click(function(ev){
-      $('#location').attr('required');
+      $('#location').attr('required', true);
       $('input[type="text"]').val("");
     });
   }
