@@ -5,17 +5,14 @@ App.Geolocation = (function ($) {
 
   function getLocation (params) {
     App.EventListeners.loadingScreen();
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        App.EventListeners.loadingScreen();
-        $('.sunset-location').val('Current Location');
-        $('.sunset-coords').val(position.coords.longitude + ',' + position.coords.latitude);
-      });
-    }
-    else {
-      console.log('blocked')
+    navigator.geolocation.getCurrentPosition(function(position) {
       App.EventListeners.loadingScreen();
-    }
+      $('.sunset-location').val('Current Location');
+      $('.sunset-coords').val(position.coords.longitude + ',' + position.coords.latitude);
+    });
+
+    // if ()
+
   }
 
   function geolocationAvailable() {

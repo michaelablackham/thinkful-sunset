@@ -45,6 +45,7 @@ App.Form = (function($) {
       //Catch for any errors
       .catch(function() {
         alert('Oops! Looks like something went wrong..');
+        App.EventListeners.loadingScreen();
       })
     });
   }
