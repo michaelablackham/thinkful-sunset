@@ -75,6 +75,10 @@
       text-align: center;
       top: 12px;
       width: 25px;
+
+       i {
+         width: 100%;
+       }
     }
 
     &.coordinates {
