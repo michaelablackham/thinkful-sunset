@@ -99,22 +99,24 @@ App.Form = (function($) {
   'use strict';
 
   function submitForm() {
-    $('form[name="location"] .submit').click(function (ev) {
-      console.log('form submitted');
-
+    $('form[name="location"]').submit(function (ev) {
       ev.preventDefault();
 
+      //Get Values of all inputs
       var locationVal = $('.sunset-location').val();
       var coordsVal = $('.sunset-coords').val();
       var sunVal = $('.sun-event:checked').val();
+      //Set the loading screen text and fire loading screen
       App.State.set({loadingText: 'Getting ' + sunVal + ' Prediction'});
       App.EventListeners.loadingScreen();
 
+      //Send HTTP Request for multiple queries
       App.Prediction.get({
         type: sunVal,
         address: locationVal,
         coords: coordsVal
       })
+      //Set state based on response from API server
       .then(function (payload) {
         App.State.set({
           sunType: payload.prediction.type,
@@ -127,12 +129,18 @@ App.Form = (function($) {
           }
         })
       })
-      .then(function(){
+      //When successful, send state to results page
+      .then(function() {
         App.Render.setCurrentPage('pageResults');
       })
-      .then(function(){
+      //Render results page
+      .then(function() {
         App.Render.renderSunEvent();
-      });
+      })
+      //Catch for any errors
+      .catch(function() {
+        alert('Oops! Looks like something went wrong..');
+      })
     });
   }
 
@@ -148,24 +156,31 @@ App.Geolocation = (function ($) {
   'use strict';
 
   function getLocation (params) {
-  var geocoder;
-
-    if ("geolocation" in navigator) {
-      App.EventListeners.loadingScreen();
+    App.EventListeners.loadingScreen();
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
-        console.log(position.coords.longitude + ',' + position.coords.latitude)
         App.EventListeners.loadingScreen();
         $('.sunset-location').val('Current Location');
         $('.sunset-coords').val(position.coords.longitude + ',' + position.coords.latitude);
       });
+    }
+    else {
+      console.log('blocked')
+      App.EventListeners.loadingScreen();
+    }
+  }
+
+  function geolocationAvailable() {
+    if ("geolocation" in navigator) {
+      $('.location-wrapper').addClass('coordinates');
     } else {
       console.log("no location")
     }
-
   }
 
   return {
-    getLocation: getLocation
+    getLocation: getLocation,
+    locationAvailable: geolocationAvailable
   }
 
   })(jQuery);
@@ -209,6 +224,7 @@ $(function() {
 
   App.State.addObserver(App.Results);
 
+  App.Geolocation.locationAvailable();
   App.EventListeners.homeButton();
   App.EventListeners.menuButton();
   App.EventListeners.useCurrent();

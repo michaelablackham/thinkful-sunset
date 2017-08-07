@@ -164,7 +164,7 @@ main button {
     color: #fff;
     font-size: 1em;
     outline: 0;
-    padding: 15px 70px 15px 15px;
+    padding: 15px 50px 15px 15px;
     width: 100%; }
     .template-form__location .sunset-location::placeholder {
       color: #fff;
@@ -180,6 +180,7 @@ main button {
     position: relative; }
     .template-form__location .location-wrapper .current-location {
       bottom: 0;
+      display: none;
       padding: 0 20px 0 15px;
       position: absolute;
       right: 0;
@@ -192,10 +193,16 @@ main button {
       height: 25px;
       justify-content: center;
       position: absolute;
-      right: 60px;
+      right: 12px;
       text-align: center;
       top: 12px;
       width: 25px; }
+    .template-form__location .location-wrapper.coordinates .current-location {
+      display: block; }
+    .template-form__location .location-wrapper.coordinates .clear {
+      right: 60px; }
+    .template-form__location .location-wrapper.coordinates .sunset-location {
+      padding-right: 100px; }
   .template-form__location .location-wrapper,
   .template-form__location .btn,
   .template-form__location input[type="radio"].toggle + label {

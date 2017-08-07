@@ -9,6 +9,7 @@ $(function() {
 
   App.State.addObserver(App.Results);
 
+  App.Geolocation.locationAvailable();
   App.EventListeners.homeButton();
   App.EventListeners.menuButton();
   App.EventListeners.useCurrent();

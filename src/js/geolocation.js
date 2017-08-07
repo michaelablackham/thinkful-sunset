@@ -4,24 +4,31 @@ App.Geolocation = (function ($) {
   'use strict';
 
   function getLocation (params) {
-  var geocoder;
-
-    if ("geolocation" in navigator) {
-      App.EventListeners.loadingScreen();
+    App.EventListeners.loadingScreen();
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
-        console.log(position.coords.longitude + ',' + position.coords.latitude)
         App.EventListeners.loadingScreen();
         $('.sunset-location').val('Current Location');
         $('.sunset-coords').val(position.coords.longitude + ',' + position.coords.latitude);
       });
+    }
+    else {
+      console.log('blocked')
+      App.EventListeners.loadingScreen();
+    }
+  }
+
+  function geolocationAvailable() {
+    if ("geolocation" in navigator) {
+      $('.location-wrapper').addClass('coordinates');
     } else {
       console.log("no location")
     }
-
   }
 
   return {
-    getLocation: getLocation
+    getLocation: getLocation,
+    locationAvailable: geolocationAvailable
   }
 
   })(jQuery);
