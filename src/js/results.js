@@ -3,7 +3,7 @@ var App = App || {};
 App.Results = (function($) {
   'use strict';
 
-  var SUNSET_TEMPLATE = '<img src="../src/images/@sunEvent.svg" alt="@sunEvent"/>';
+  // var SUNSET_TEMPLATE = '<img src="../src/images/@sunEvent.svg" alt="@sunEvent"/>';
   var LOCATION_TEMPLATE = '<h2 class="heading-location"><i class="fa fa-location-arrow" aria-hidden="true"></i> @location</h2>';
   var DATE_TEMPLATE = '<h2 class="heading-date">@dow, @month @date</h2>';
   var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>';
@@ -22,11 +22,26 @@ App.Results = (function($) {
       return;
     }
 
-    function sunIcon() {
-      var sunIcon = SUNSET_TEMPLATE
-        .replace('@sunEvent', state.sunType)
-        .replace('@sunEvent', state.sunType);
-      return sunIcon;
+    // function sunIcon() {
+    //   if () {
+    //     sunIcon
+    //   }
+    //   var sunIcon = SUNSET_TEMPLATE
+    //     .replace('@sunEvent', state.sunType)
+    //     .replace('@sunEvent', state.sunType);
+    //   return sunIcon;
+    // }
+
+    function renderIcon() {
+      var state = App.State.get();
+      if (state.sunType === 'sunset') {
+        App.Icons.sunset();
+        console.log(App.Icons.sunset())
+      }
+      else {
+        App.Icons.sunrise();
+        console.log(App.Icons.sunrise())
+      }
     }
 
     var newLocation = LOCATION_TEMPLATE
@@ -42,7 +57,7 @@ App.Results = (function($) {
 
     var newQualityInfo = EXTRA_INFO_TEMPLATE
       .replace('@sunEvent', state.sunType)
-      .replace('@sunIcon', sunIcon())
+      .replace('@sunIcon', renderIcon())
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@qualityString', state.forecast.qualityString)
       .replace('@time', App.ConvertTime.recommendedTime());
@@ -50,7 +65,6 @@ App.Results = (function($) {
     var sunBackground = SUN_BACKGROUND.replace('@color-class',App.Colors.color());
 
     $('#page-results').html(App.ToggleForm.cloneMenu() + sunBackground + newDate + newLocation + newQuality + newQualityInfo);
-
   }
 
   function renderResults() {
