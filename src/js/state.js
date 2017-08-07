@@ -2,9 +2,9 @@ var App = App || {};
 
 App.State = (function ($) {
   var state = {
-    location: '', //city state given for search
+    location: '',
     coords: null,
-    sunType: '', // sunset or sunrise
+    sunType: '',
     forecast: null,
     currentPage: 'pageHome',
     loadingText: null

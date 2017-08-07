@@ -59,7 +59,7 @@ App.Results = (function($) {
     }
     App.EventListeners.loadingScreen();
     updateTemplates();
-    $('input[type="text"]').val("");
+    $('input[type="text"]').val('');
   }
 
   return {

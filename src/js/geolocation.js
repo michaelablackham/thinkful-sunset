@@ -20,7 +20,7 @@ App.Geolocation = (function ($) {
   };
 
   function geolocationAvailable() {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       $('.location-wrapper').addClass('coordinates');
     }
   }

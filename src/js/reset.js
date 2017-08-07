@@ -5,15 +5,15 @@ App.Reset = (function ($) {
 
   function resetPage (params) {
     App.State.set({
-      sunType: "",
-      location: "",
+      sunType: '',
+      location: '',
       forecast: null,
       currentPage: 'pageHome'
     });
 
     App.Render.setCurrentPage('pageHome');
     App.Render.renderSunEvent();
-    $('.sunset-location').val("");
+    $('.sunset-location').val('');
   }
 
   return {

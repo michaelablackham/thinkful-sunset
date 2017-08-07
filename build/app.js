@@ -139,6 +139,7 @@ App.Form = (function($) {
       //Render results page
       .then(function() {
         App.Render.renderSunEvent();
+        $('.resultsPage--toggle-form').removeClass('active');
       })
       //Catch for any errors
       .catch(function() {
@@ -176,7 +177,7 @@ App.Geolocation = (function ($) {
   };
 
   function geolocationAvailable() {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       $('.location-wrapper').addClass('coordinates');
     }
   }
@@ -187,12 +188,6 @@ App.Geolocation = (function ($) {
   }
 
   })(jQuery);
-
-//   var BASE_URL = 'https://sunsetwx.com/'
-//   var REG_KEY = '0OdKkau61SPKMU0GcLfPz9cI';
-//   var ENPOINT = '/v1/register';
-//   var PASSWORD = "B13b18a2"
-
 
 $(function() {
   'use strict';
@@ -224,7 +219,7 @@ App.EventListeners = (function($) {
   function clearForm() {
     $('.clear').click(function(ev){
       $('#location').attr('required', true);
-      $('input[type="text"]').val("");
+      $('input[type="text"]').val('');
     });
   }
 
@@ -247,11 +242,11 @@ App.EventListeners = (function($) {
 
   function loadingScreen() {
     if ($('.loading-screen').hasClass('active')) {
-      $('.loading-screen').removeClass("active");
+      $('.loading-screen').removeClass('active');
     }
     else {
       var state = App.State.get();
-      $('.loading-screen').addClass("active");
+      $('.loading-screen').addClass('active');
       $('.loading-screen').find('h2').text(state.loadingText);
     }
   }
@@ -359,15 +354,15 @@ App.Reset = (function ($) {
 
   function resetPage (params) {
     App.State.set({
-      sunType: "",
-      location: "",
+      sunType: '',
+      location: '',
       forecast: null,
       currentPage: 'pageHome'
     });
 
     App.Render.setCurrentPage('pageHome');
     App.Render.renderSunEvent();
-    $('.sunset-location').val("");
+    $('.sunset-location').val('');
   }
 
   return {
@@ -436,7 +431,7 @@ App.Results = (function($) {
     }
     App.EventListeners.loadingScreen();
     updateTemplates();
-    $('input[type="text"]').val("");
+    $('input[type="text"]').val('');
   }
 
   return {
@@ -450,9 +445,9 @@ var App = App || {};
 
 App.State = (function ($) {
   var state = {
-    location: '', //city state given for search
+    location: '',
     coords: null,
-    sunType: '', // sunset or sunrise
+    sunType: '',
     forecast: null,
     currentPage: 'pageHome',
     loadingText: null

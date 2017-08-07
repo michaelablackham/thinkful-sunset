@@ -15,7 +15,7 @@ App.EventListeners = (function($) {
   function clearForm() {
     $('.clear').click(function(ev){
       $('#location').attr('required', true);
-      $('input[type="text"]').val("");
+      $('input[type="text"]').val('');
     });
   }
 
@@ -38,11 +38,11 @@ App.EventListeners = (function($) {
 
   function loadingScreen() {
     if ($('.loading-screen').hasClass('active')) {
-      $('.loading-screen').removeClass("active");
+      $('.loading-screen').removeClass('active');
     }
     else {
       var state = App.State.get();
-      $('.loading-screen').addClass("active");
+      $('.loading-screen').addClass('active');
       $('.loading-screen').find('h2').text(state.loadingText);
     }
   }
