@@ -411,7 +411,7 @@ var App = App || {};
 App.Results = (function($) {
   'use strict';
 
-  // var SUNSET_TEMPLATE = '<img src="../src/images/@sunEvent.svg" alt="@sunEvent"/>';
+  var SUNSET_TEMPLATE = '<img src="../src/images/@sunEvent.svg" alt="@sunEvent"/>';
   var LOCATION_TEMPLATE = '<h2 class="heading-location"><i class="fa fa-location-arrow" aria-hidden="true"></i> @location</h2>';
   var DATE_TEMPLATE = '<h2 class="heading-date">@dow, @month @date</h2>';
   var QUALITY_TEMPLATE = '<h3 class="quality--percent">@qualityPercent%</h3>';
@@ -430,26 +430,11 @@ App.Results = (function($) {
       return;
     }
 
-    // function sunIcon() {
-    //   if () {
-    //     sunIcon
-    //   }
-    //   var sunIcon = SUNSET_TEMPLATE
-    //     .replace('@sunEvent', state.sunType)
-    //     .replace('@sunEvent', state.sunType);
-    //   return sunIcon;
-    // }
-
-    function renderIcon() {
-      var state = App.State.get();
-      if (state.sunType === 'sunset') {
-        App.Icons.sunset();
-        console.log(App.Icons.sunset())
-      }
-      else {
-        App.Icons.sunrise();
-        console.log(App.Icons.sunrise())
-      }
+    function sunIcon() {
+      var sunIcon = SUNSET_TEMPLATE
+        .replace('@sunEvent', state.sunType)
+        .replace('@sunEvent', state.sunType);
+      return sunIcon;
     }
 
     var newLocation = LOCATION_TEMPLATE
@@ -464,8 +449,8 @@ App.Results = (function($) {
       .replace('@qualityPercent', Math.round(state.forecast.qualityPercent));
 
     var newQualityInfo = EXTRA_INFO_TEMPLATE
+      .replace('@sunIcon', sunIcon())
       .replace('@sunEvent', state.sunType)
-      .replace('@sunIcon', renderIcon())
       .replace('@temp', App.ConvertTemp.fahrenheit())
       .replace('@qualityString', state.forecast.qualityString)
       .replace('@time', App.ConvertTime.recommendedTime());
@@ -545,46 +530,6 @@ App.ConvertTemp = (function($) {
 
   return {
     fahrenheit: celsiusToFahrenheit
-  }
-
-})(jQuery);
-
-var App = App || {};
-
-App.ToggleForm = (function($) {
-  'use strict';
-
-  // function cloneForm() {
-  //   var TOGGLE_FORM_TEMPLATE = '<div class="resultsPage--toggle-form template-form">'+
-  //   '<form class="template-form__location flex" name="locationToggle">'+
-  //     '<fieldset class="location flex">'+
-  //       '<label for="location">Location *</label>'+
-  //       '<div class="location-wrapper">'+
-  //         '<input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>'+
-  //         '<button class="current-location" title="get current location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>'+
-  //       '</div>'+
-  //     '</fieldset>'+
-  //     '<fieldset class="sunevent">'+
-  //       '<legend>Choose to see results for sunset or sunrise</legend>'+
-  //       '<input id="sunset2" type="radio" name="sunEvent" value="sunset" class="sun-event toggle toggle-left" checked>'+
-  //       '<label for="sunset2" class="active btn">Sunset</label>'+
-  //       '<input id="sunrise2" type="radio" name="sunEvent" value="sunrise" class="sun-event toggle toggle-right">'+
-  //       '<label for="sunrise2" class="btn">Sunrise</label>'+
-  //     '</fieldset>'+
-  //     '<p class="disclaimer"><em>* Currently only valid for the US. Not including <strong>Alaska</strong> or <strong>Hawaii</strong></em></p>'+
-  //     '<button title="Get Prediction" type="submit" name="submit" class="submit">Get Prediction</button>'+
-  //   '</form>'+
-  //   '</div>';
-  //
-  //
-  //   return TOGGLE_FORM_TEMPLATE;
-  // }
-
-
-
-
-  return {
-    cloneMenu: cloneForm
   }
 
 })(jQuery);
