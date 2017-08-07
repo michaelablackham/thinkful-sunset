@@ -13,8 +13,8 @@ This is especially helpful for photographers or even runner who want to catch th
 
 ![Walkthrough](src/screenshots/home.png)
 ![Walkthrough](src/screenshots/loading.png)
-![Walkthrough](src/screenshots/result-1.png)
-![Walkthrough](src/screenshots/result-2.png)
+![Walkthrough](src/screenshots/result-high.png)
+![Walkthrough](src/screenshots/result-low.png)
 
 ### Features
   - HTML
