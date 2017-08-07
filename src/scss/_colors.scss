@@ -20,6 +20,7 @@ $yellow-40: #e4ba04;
 $yellow-70: #f1ac6a;
 $orange-80: #E64748;
 $pink-50: #bb4c82;
+$pink-40: #e22885;
 $pink-60: #b92f74;
 $pink-80: #6f2e5b;
 
@@ -33,4 +34,24 @@ $link: $blue-50;
   background: -moz-radial-gradient(100% 100%, ellipse cover, $color1 0%, $color2 5%, $color3 50%, $color4 100%); /* FF3.6-15 */
   background: -webkit-radial-gradient(100% 100%, ellipse cover, $color1 0%, $color2 5%, $color3 50%, $color4 100%); /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at 100% 100%, $color1 0%,  $color2 10%,  $color3 50%, $color4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@keyframes colorchange
+{
+  0%   {color: $pink-40;}
+  20%  {color: $orange-80;}
+  40%  {color: $yellow-70;}
+  60%  {color: $blue-20;}
+  80%  {color: $yellow-40;}
+  100% {color: $pink-40;}
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {color: $pink-40;}
+  20%  {color: $orange-80;}
+  40%  {color: $yellow-70;}
+  60%  {color: $blue-20;}
+  80%  {color: $yellow-40;}
+  100% {color: $pink-40;}
 }

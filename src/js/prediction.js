@@ -12,7 +12,7 @@ App.Prediction = (function ($) {
 
     //Only use if coordinates are used instead of input for city st
     params.coords
-      ? queryParams.coords = param.coords
+      ? queryParams.coords = params.coords
       : queryParams.address = params.address
 
     return jQuery.ajax({

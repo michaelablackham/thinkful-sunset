@@ -4,16 +4,21 @@ App.Form = (function($) {
   'use strict';
 
   function submitForm() {
-    $('form[name="location"], form[name="locationToggle"]').submit(function (ev) {
+    $('form[name="location"] .submit').click(function (ev) {
+      console.log('form submitted');
+
       ev.preventDefault();
 
-      App.EventListeners.loadingScreen();
       var locationVal = $('.sunset-location').val();
+      var coordsVal = $('.sunset-coords').val();
       var sunVal = $('.sun-event:checked').val();
+      App.State.set({loadingText: 'Getting ' + sunVal + ' Prediction'});
+      App.EventListeners.loadingScreen();
 
       App.Prediction.get({
         type: sunVal,
-        address: locationVal
+        address: locationVal,
+        coords: coordsVal
       })
       .then(function (payload) {
         App.State.set({

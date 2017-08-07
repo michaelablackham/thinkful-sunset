@@ -22,7 +22,10 @@
       </button>
     </header>
     <section id="page-loading" class="loading-screen">
-      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      <div class="loading-screen--wrapper">
+        <h2></h2>
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      </div>
     </section>
     <main>
       <section id="page-home">
@@ -32,7 +35,9 @@
             <label for="location">Location *</label>
             <div class="location-wrapper">
               <input id="location" type="text" name="location" placeholder="City, ST" class="sunset-location" required></input>
-              <button class="current-location" title="get current location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
+              <input id="coords" type="text" name="coords" class="sunset-coords"></input>
+              <button class="clear"><i class="fa fa-times" aria-hidden="true"></i></button>
+              <button class="current-location" title="get current location" data-text="Getting Current Location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
             </div>
           </fieldset>
           <fieldset class="sunevent">
@@ -43,7 +48,7 @@
             <label for="sunrise" class="btn">Sunrise</label>
           </fieldset>
           <p class="disclaimer"><em>* Currently only valid for the US. Not including <strong>Alaska</strong> or <strong>Hawaii</strong></em></p>
-          <button title="Get Prediction" type="submit" name="submit" class="submit">Get Prediction</button>
+          <button title="Get Prediction" type="submit" name="submit" class="submit" data-text="Getting Prediction">Get Prediction</button>
         </form>
       </div>
       </section>

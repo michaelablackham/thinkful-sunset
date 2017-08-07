@@ -3,9 +3,11 @@ var App = App || {};
 App.State = (function ($) {
   var state = {
     location: '', //city state given for search
+    coords: null,
     sunType: '', // sunset or sunrise
     forecast: null,
-    currentPage: 'pageHome'
+    currentPage: 'pageHome',
+    loadingText: null
   };
 
   var observers = []
